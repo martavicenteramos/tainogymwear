@@ -68,7 +68,6 @@ ActiveRecord::Schema.define(version: 2019_11_25_154538) do
     t.bigint "product_type_id"
     t.bigint "colour_id"
     t.bigint "cut_id"
-    t.bigint "style_id"
     t.integer "price"
     t.string "image_url"
     t.datetime "created_at", null: false
@@ -76,7 +75,6 @@ ActiveRecord::Schema.define(version: 2019_11_25_154538) do
     t.index ["colour_id"], name: "index_products_on_colour_id"
     t.index ["cut_id"], name: "index_products_on_cut_id"
     t.index ["product_type_id"], name: "index_products_on_product_type_id"
-    t.index ["style_id"], name: "index_products_on_style_id"
   end
 
   create_table "styles", force: :cascade do |t|
@@ -137,7 +135,6 @@ ActiveRecord::Schema.define(version: 2019_11_25_154538) do
   add_foreign_key "products", "colours"
   add_foreign_key "products", "cuts"
   add_foreign_key "products", "product_types"
-  add_foreign_key "products", "styles"
   add_foreign_key "user_colours", "colours"
   add_foreign_key "user_colours", "users"
   add_foreign_key "user_product_types", "product_types"

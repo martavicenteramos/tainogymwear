@@ -4,7 +4,6 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.references :product_type, foreign_key: true
       t.references :colour, foreign_key: true
       t.references :cut, foreign_key: true
-      t.references :style, foreign_key: true
       t.integer :price
       t.string :image_url
 
