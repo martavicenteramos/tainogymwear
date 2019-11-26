@@ -4,4 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   belongs_to :cut, optional: true
+  has_many :orders
+  has_many :products, through: :orders
 end
