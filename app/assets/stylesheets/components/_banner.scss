@@ -1,0 +1,30 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  height: 500px;
+  padding: 150px 0px 0px 200px;
+  margin-top: 15px;
+  filter:brightness(115%);
+}
+
+.banner h4 {
+  position: relative;
+  color: $taino-lightgray;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 54px;
+  font-family: $title-font;
+  opacity: .6;
+  letter-spacing: 8px;
+  line-height: 80px;
+  font-style: 300;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}

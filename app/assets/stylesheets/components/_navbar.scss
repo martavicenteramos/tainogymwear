@@ -1,32 +1,56 @@
 .navbar-lewagon {
+  justify-content: space-between;
   background-color: $white;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  justify-content: space-between;
   color: $taino-darkgray;
   height: 70px;
-  position: sticky;
   z-index:2;
 
+  .nav-item i {
+    color: $taino-newgray;
+    font-size: 18px;
+    vertical-align: center;
+    padding: 12px 20px;
+  }
+
   .navbar-brand img {
-  width: 150px;
+  width: 120px;
   }
 
   .navbar-collapse {
   flex-grow: 0;
   }
 
-  .nav-item {
-  color: $taino-darkgray;
+  .nav-item i:hover {
+    color: $taino-blue;
+    opacity: .7;
+  }
+
+  .nav-link {
+  color: $taino-mediumgray;
   font-style: $headers-font;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 5px;
-  padding: 10px 20px;
+  padding: 10px 25px;
   text-decoration: none;
   text-transform: uppercase;
   }
 }
 
-// .navbar-lewagon .navbar-brand img {
-//   width: 200px;
-// }
+.nav-item-centered {
+  display: flex;
+  position: absolute;
+  left: 40%;
+}
+
+.dropdown-item {
+  color: $taino-newgray;
+  font-style: $headers-font;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 5px;
+  padding: 10px 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
