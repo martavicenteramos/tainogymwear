@@ -32,7 +32,6 @@ class ProductsController < ApplicationController
   # Calculates number of properties from user questionaire
   def calculate_questions(user)
     colour = { Black: 0, Pastel: 0, Bright: 0, Neutral: 0 }
-    cut = { Tight: 0, Loose: 0 }
     type = { Sports_Bra: 0, Leggings: 0, Crop_Top: 0, T_shirt: 0, Shorts: 0, Hoodie: 0 }
     style = { Shoulders: 0, Belly: 0, Arms: 0, Waist: 0, Legs: 0, Glutes: 0 }
     user.styles.each do |user_sty|
