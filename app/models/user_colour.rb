@@ -1,6 +1,6 @@
 class UserColour < ApplicationRecord
-  belongs_to :color
+  belongs_to :colour
   belongs_to :user
 
-  validates :color, :user, presence: true
+  validates :colour, :user, presence: true
 end
