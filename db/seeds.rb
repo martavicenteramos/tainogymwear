@@ -72,7 +72,7 @@ Product.all.each do |ele|
   })
 end
 
-# Please manually add more styles to a few of your Products
+# fPlease manually add more styles to a few of your Products
 # with the following command
 # ProductStyle.create(style_id:#, product_id:#)
 
@@ -139,7 +139,26 @@ User.all.each do |user|
   end
 end
 
+5.times do
+  Order.create!({
+    total_value: 0,
+    date: Time.new,
+    status: "pending",
+    address: Faker::Address.full_address,
+    user: User.all.sample
+  })
+end
 
+Order.all.each do |order|
+  5.times do
+    OrderProduct.create!({
+      product: Product.all.sample,
+      quantity: rand(0..50),
+      size: ["XS", "S", "M", "L", "XL"],
+      order: order
+    });
+  end
+end
 
 
 
