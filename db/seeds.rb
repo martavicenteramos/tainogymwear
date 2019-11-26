@@ -5,8 +5,8 @@ require 'json'
 require 'byebug'
 # require 'gymshark.json'
 
-Product.destroy_all
 ProductStyle.destroy_all
+Product.destroy_all
 UserProductType.destroy_all
 ProductType.destroy_all
 UserColour.destroy_all
