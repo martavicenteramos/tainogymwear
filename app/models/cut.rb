@@ -1,3 +1,3 @@
 class Cut < ApplicationRecord
-  validates :name, presence: true, inclusion: { in: %w[tight loose] }
+  validates :name, presence: true, inclusion: { in: %w[Tight Loose] }
 end
