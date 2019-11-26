@@ -1,12 +1,32 @@
 .navbar-lewagon {
+  background-color: $white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
   justify-content: space-between;
-  background: white;
-}
+  color: $taino-darkgray;
+  height: 70px;
+  position: sticky;
+  z-index:2;
 
-.navbar-lewagon .navbar-collapse {
+  .navbar-brand img {
+  width: 150px;
+  }
+
+  .navbar-collapse {
   flex-grow: 0;
+  }
+
+  .nav-item {
+  color: $taino-darkgray;
+  font-style: $headers-font;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 5px;
+  padding: 10px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  }
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
+// .navbar-lewagon .navbar-brand img {
+//   width: 200px;
+// }
