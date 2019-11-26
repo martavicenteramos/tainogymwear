@@ -1,6 +1,8 @@
-.main-title {
+h1 {
+  color: $taino-darkgray;
   font-style: $headers-font;
   font-weight: 500;
   font-size: 18px;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
