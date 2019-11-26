@@ -1,6 +1,8 @@
 # Use this file to create your database through the commands rails db:seed
 # If you already have a db created please drop it and create a new with this
 # seed
+OrderProduct.destroy_all
+Order.destroy_all
 ProductStyle.destroy_all
 Product.destroy_all
 UserProductType.destroy_all

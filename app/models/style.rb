@@ -1,3 +1,3 @@
 class Style < ApplicationRecord
-  validates :name, presence: true, inclusion: { in: %w[shoulders belly arms waist legs glutes] }, uniqueness: true
+  validates :name, presence: true, inclusion: { in: %w[Shoulders Belly Arms Waist Legs Glutes] }, uniqueness: true
 end
