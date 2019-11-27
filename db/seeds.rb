@@ -1,6 +1,12 @@
 # Use this file to create your database through the commands rails db:seed
 # If you already have a db created please drop it and create a new with this
 # seed
+require 'json'
+# require 'byebug'
+# require 'gymshark.json'
+
+OrderProduct.destroy_all
+Order.destroy_all
 ProductStyle.destroy_all
 Product.destroy_all
 UserProductType.destroy_all
@@ -45,22 +51,31 @@ glutes = Style.create(name: "Glutes")
 cleavage = Style.create(name: "Cleavage")
 
 # dummy image
-image_url = "https://img.gymshark.com/image/fetch/q_auto,f_auto,w_900/https://cdn.shopify.com/s/files/1/0098/8822/products/ULTRA_SEAMLESS_SPORTS_BRA_BLACK_A-Edit_61c2aab9-0f87-4efe-9b7b-67f62d50b418.jpg?v=1571438805"
+# image_url = "https://img.gymshark.com/image/fetch/q_auto,f_auto,w_900/https://cdn.shopify.com/s/files/1/0098/8822/products/ULTRA_SEAMLESS_SPORTS_BRA_BLACK_A-Edit_61c2aab9-0f87-4efe-9b7b-67f62d50b418.jpg?v=1571438805"
+
+# dummy json seed
+json_file_path = File.join(File.dirname(__FILE__), 'gymshark.json')
+json_data = File.read(json_file_path)
+clothes = JSON.parse(json_data)
+
+# clothes[0..10].each do |st| clothesscapred << st["name"] end
+# json_from_file = JSON.parse("gymshark.json")
+
 
 # Products
 puts "Creating 10 products"
-10.times {
+clothes[0..10].each do |st|
     Product.create!(
     {
-      name: Faker::Name.name,
+      name: st["name"],
       product_type: ProductType.all.sample,
       colour: Colour.all.sample,
       cut: Cut.all.sample,
-      price: rand(10..50),
-      image_url: image_url
+      price: st["price"],
+      image_url: st["image"]
     }
   )
-}
+end
 
 # One style per product products
 puts "Adding styles to the products"
