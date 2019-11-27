@@ -2,11 +2,8 @@
 # If you already have a db created please drop it and create a new with this
 # seed
 require 'json'
-# require './gymsharkwomen-scraper.rb'
-require_relative 'gymsharkwomen-scraper'
-require 'byebug'
 require 'mechanize'
-# require 'gymshark.json'
+require_relative 'gymsharkwomen-scraper'
 
 OrderProduct.destroy_all
 Order.destroy_all
