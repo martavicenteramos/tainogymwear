@@ -8,4 +8,8 @@ class OrderPolicy < ApplicationPolicy
   def index?
     record.user == user
   end
+
+  def cart?
+    true
+  end
 end

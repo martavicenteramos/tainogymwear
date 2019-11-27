@@ -7,4 +7,13 @@ class User < ApplicationRecord
   has_many :orders
   has_many :order_products, through: :orders
   has_many :products, through: :orders
+
+  def find_or_create_pending_order
+    order = orders.where(status: "pending")
+    if order.any?
+      order.first
+    else
+      Order.create(user: self, status: "pending")
+    end
+  end
 end
