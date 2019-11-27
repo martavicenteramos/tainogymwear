@@ -94,6 +94,7 @@ class ProductsController < ApplicationController
     @best_products << @best_cut
     @best_products << @best_type
     @best_products = @best_products.uniq{|t| t.ids }
+  end
 
   def check_user_questionaire
     if session[:questionaire].nil?
