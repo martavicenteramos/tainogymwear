@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   belongs_to :cut, optional: true
   has_many :orders
+  has_many :order_products, through: :orders
   has_many :products, through: :orders
 end

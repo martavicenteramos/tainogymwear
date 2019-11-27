@@ -1,9 +1,6 @@
 # Use this file to create your database through the commands rails db:seed
 # If you already have a db created please drop it and create a new with this
 # seed
-require 'json'
-# require 'byebug'
-# require 'gymshark.json'
 
 OrderProduct.destroy_all
 Order.destroy_all

@@ -1,6 +1,7 @@
 class OrderProductsController < ApplicationController
-  before_action :set_product
+  before_action :set_product, only: [:create]
   skip_before_action :authenticate_user!, only: [:create]
+
   def create
     @order_product = OrderProduct.new(order_product_params)
     @order_product.product = @product
