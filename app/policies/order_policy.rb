@@ -1,15 +1,15 @@
-class OrderProductPolicy < ApplicationPolicy
+class OrderPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
     end
   end
 
-  def create?
-    true
+  def index?
+    record.user == user
   end
 
-  def destroy?
+  def cart?
     true
   end
 end

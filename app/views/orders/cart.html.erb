@@ -1,0 +1,14 @@
+<div class="container">
+  <% if @order.nil? %>
+    <h2>Your cart is empty!</h2>
+  <% else %>
+    <% @order.order_products.each do |order_product| %>
+      <p><%= order_product.quantity %>x <%= order_product.product.name %> <%= order_product.size %></p>
+      <p><%= order_product.quantity * order_product.product.price %></p>
+      <%= link_to "delete", order_product_path(order_product), method: :delete %>
+    <% end %>
+  <% end %>
+  <div>
+    <p><%= @order.total_value %></p>
+  </div>
+</div>
