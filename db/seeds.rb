@@ -2,8 +2,8 @@
 # If you already have a db created please drop it and create a new with this
 # seed
 require 'json'
-require_relative 'gymsharkwomen-scraper'
 require 'mechanize'
+require_relative 'gymsharkwomen-scraper'
 
 OrderProduct.destroy_all
 Order.destroy_all
@@ -53,7 +53,9 @@ cleavage = Style.create(name: "Cleavage")
 # Initiate scraper
 clothes = GymSharkWomenScraper.scrape
 
-# Image
+
+# dummy image
+img = "https://images.unsplash.com/photo-1562886877-0be0db6aba84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80"
 
 
 # Products
@@ -66,7 +68,7 @@ clothes.each do |st|
       colour: Colour.all.sample,
       cut: Cut.all.sample,
       price: st[:price],
-      image_url: st[:image]
+      image_url: img
     }
   )
 
@@ -169,7 +171,3 @@ Order.all.each do |order|
     });
   end
 end
-
-
-
-

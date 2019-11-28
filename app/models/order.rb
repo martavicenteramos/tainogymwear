@@ -3,5 +3,6 @@ class Order < ApplicationRecord
   has_many :products, through: :order_products
   has_many :order_products
 
-  validates :total_value, :date, :status, :address, presence: true
+  validates :status, presence: true
+  monetize :total_value_cents
 end

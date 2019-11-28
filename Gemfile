@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 ruby '2.6.3'
 
+gem 'stripe_event'
+gem 'stripe'
+gem 'money-rails'
 gem 'pundit'
 gem 'bootsnap', require: false
 gem 'devise'

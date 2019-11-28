@@ -7,6 +7,8 @@ class Product < ApplicationRecord
   has_many :pictures
 
   validates :product_type, presence: true
-  validates :price, presence: true
+  validates :price_cents, presence: true
   validates :image_url, presence: true
+
+  monetize :price_cents
 end
