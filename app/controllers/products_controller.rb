@@ -5,9 +5,12 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    # @recomended shows products based on other user similarities
+    @recomended = Recommended.new.recomend_products(current_user)
+
     # @user = current_user
     # if @user.products.present?
-    #   @user_products = @user.products
+    #   @user_products = @usenu tai r.products
     #   search = calculate_orders(@user_products)
     #   best_match(search)
     # else
@@ -111,3 +114,27 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
