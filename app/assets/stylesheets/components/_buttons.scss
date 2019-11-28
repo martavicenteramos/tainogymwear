@@ -9,6 +9,7 @@
   text-transform: uppercase;
   border-radius: 7px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
 .gray-btn:hover {
@@ -37,4 +38,73 @@
   text-decoration: none;
 }
 
+.checkout-btn {
+  font-size: 12px;
+  letter-spacing: 5px;
+  padding: 10px 0px;
+  width: 100%;
+  opacity: .8;
+}
 
+.checkout-btn:hover {
+  opacity: .5;
+  text-decoration: none;
+}
+
+.btn-counter-add {
+  background-color: $taino-lightgray;
+  color: $taino-newgray;
+  font-family: $headers-font;
+  font-size: 14px;
+  border-radius: 3px;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+}
+
+.btn-counter-add:hover {
+  color: $white;
+  background-color: $taino-blue;
+  font-family: $headers-font;
+  opacity: .4;
+}
+
+.quantity-counter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 80px;
+  justify-content: space-between;
+  margin: 8px 0px;
+
+  p {
+    margin: 0px;
+    padding: 0px;
+  }
+}
+
+.quantity-counter .counter-div {
+  border-color: $taino-lightgray;
+  border-style: solid;
+  border-width: 0.5px;
+  padding: 0px;
+
+}
+
+.btn-counter-remove {
+  background-color: $taino-lightgray;
+  color: $taino-newgray;
+  font-family: $headers-font;
+  font-size: 14px;
+  border-radius: 3px;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+}
+
+.btn-counter-remove:hover {
+  color: $white;
+  background-color: $taino-blue;
+  font-family: $headers-font;
+  opacity: .4;
+}

@@ -1,0 +1,65 @@
+<br>
+<br>
+
+<div class="cart-draft">
+  <h1>MY CART</h1>
+  <div class="mini-card-product">
+    <div class="mini-card-image">
+      <img src="https://img.gymshark.com/image/fetch/q_auto,f_auto,w_900/https://cdn.shopify.com/s/files/1/1367/5201/products/APOLLO_PULLOVER_WINTER_FUSHIA_A-EditEdit_DW.jpg?v=1571284481" />
+    </div>
+    <div class="mini-card-product-infos">
+      <h2>APOLLO HOODIE</h2>
+      <h5>size: Small</h5>
+      <div class="quantity-counter">
+        <div class="counter-div"> <button type="button" class="btn-counter-add">+</button></div>
+        <div class="counter-middle"><p>4</p></div>
+        <div class="counter-div"><button type="button" class="btn-counter-remove">-</button></div>
+      </div>
+      <p class="rm-text">Remove</p>
+      <h5 class="mini-card-price">32.00 €</h5>
+    </div>
+  </div>
+
+  <div class="mini-card-product">
+      <div class="mini-card-image">
+        <img src="https://img.gymshark.com/image/fetch/q_auto,f_auto,w_900/https://cdn.shopify.com/s/files/1/1367/5201/products/APOLLO_PULLOVER_WINTER_FUSHIA_A-EditEdit_DW.jpg?v=1571284481" />
+      </div>
+      <div class="mini-card-product-infos">
+        <h2>VITAL SEAMLESS LEGGINGS</h2>
+        <h5>size: Large</h5>
+        <div class="quantity-counter">
+          <div class="counter-div"> <button type="button" class="btn-counter-add">+</button></div>
+          <div class="counter-middle"><p>4</p></div>
+          <div class="counter-div"><button type="button" class="btn-counter-remove">-</button></div>
+        </div>
+        <p class="rm-text">Remove</p>
+        <h5 class="mini-card-price">43.00 €</h5>
+      </div>
+  </div>
+
+
+  <div class="mini-card-product">
+      <div class="mini-card-image"><%= cl_image_tag dog.pictures.first.photo, height: 300, width: 400, crop: :fill %>
+      </div>
+      <div class="mini-card-product-infos">
+        <h2><%= order_product.product.name %></h2>
+        <h5><%= order_product.size %></h5>
+        <div class="quantity-counter">
+          <div class="counter-div"> <button type="button" class="btn-counter-add">+</button></div>
+          <div class="counter-middle"><p><%= order_product.product.quantity %></p></div>
+          <div class="counter-div"><button type="button" class="btn-counter-remove">-</button></div>
+        </div>
+        <p class="rm-text">Remove</p>
+        <h5 class="mini-card-price"><%= order_product.product.price %>€</h5>
+      </div>
+  </div>
+
+ <div class="cart-subtotal">
+    <h1>TOTAL</h1>
+    <h2> 45.00 €</h2>
+  </div>
+
+  <%= link_to "Checkout", checkout_path, class: "blue-btn checkout-btn" %>
+  <br>
+  <%= link_to "My cart", cart_path, class: "gray-btn checkout-btn" %>
+</div>

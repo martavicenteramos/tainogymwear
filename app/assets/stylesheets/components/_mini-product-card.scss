@@ -1,0 +1,72 @@
+.mini-card-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  display: flex;
+  align-items: center;
+  border-bottom: 0.5px solid $taino-lightgray;
+  margin-top: 5px;
+}
+
+.mini-card-product img {
+  height: 100%;
+  width: 120px;
+  margin-right: 25px;
+  object-fit: cover;
+}
+
+.mini-card-product h2 {
+  color: black;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.mini-card-product h5 {
+  font-size: 10px;
+}
+
+.mini-card-product .rm-text {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: $taino-blue;
+  margin: 8px 0px;
+}
+
+.mini-card-product .card-product-infos {
+  line-height: 20px;
+}
+
+.mini-card-price {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0px;
+}
+
+.cart-subtotal {
+  display: flex;
+  margin: 10px 0px;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 0.5px solid $taino-lightgray;
+}
+
+.cart-draft {
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+  text-align: center;
+  font-style: bold;
+  }
+
+  h1 {
+    text-align: center;
+  }
+}
+
+.mini-card-product-infos {
+  padding: 12px;
+}
+
