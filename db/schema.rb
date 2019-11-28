@@ -50,6 +50,14 @@ ActiveRecord::Schema.define(version: 2019_11_27_172437) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
+  create_table "pictures", force: :cascade do |t|
+    t.string "url"
+    t.bigint "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_pictures_on_product_id"
+  end
+
   create_table "product_styles", force: :cascade do |t|
     t.bigint "style_id"
     t.bigint "product_id"
