@@ -16,4 +16,16 @@ class OrderPolicy < ApplicationPolicy
   def checkout?
     true
   end
+
+  def update?
+    record.user == user
+  end
+
+  def edit?
+    update?
+  end
+
+  def review_information?
+    record.user == user
+  end
 end

@@ -11,8 +11,5 @@
   <div>
     <p><%= @order.total_value %></p>
   </div>
-  <%= form_tag checkout_path do %>
-    <%= hidden_field_tag 'order', @order_id %>
-    <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-  <% end %>
+  <%= link_to "checkout", edit_order_path(@order) %>
 </div>

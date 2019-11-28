@@ -1,0 +1,4 @@
+  <%= form_tag checkout_path do %>
+    <%= hidden_field_tag 'order', params[:order_id] %>
+    <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+  <% end %>

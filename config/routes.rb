@@ -21,7 +21,13 @@ Rails.application.routes.draw do
   end
 
   get "cart", to: "orders#cart"
+
+  resources :orders, only: [:edit, :update] do
+    get "review_information", to: "orders#review_information"
+  end
+
   post "checkout", to: "orders#checkout"
+
   resources :order_products, only: [:destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
