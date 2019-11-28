@@ -23,7 +23,7 @@
 
   .nav-item i:hover {
     color: $taino-blue;
-    opacity: .7;
+    opacity: .8;
   }
 
   .nav-link {
@@ -35,6 +35,10 @@
   padding: 10px 25px;
   text-decoration: none;
   text-transform: uppercase;
+  }
+
+  .nav-link a {
+    padding: 10px 25px;
   }
 }
 
