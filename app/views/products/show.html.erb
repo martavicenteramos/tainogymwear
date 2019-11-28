@@ -1,6 +1,7 @@
 <div class="container">
   <%= notice %>
-  <%= image_tag @product.image_url %>
+  <%= cl_image_tag @product.pictures.first.url, crop: :cover %>
+
   <p><%= @product.name %></p>
   <p><%= @product.price %></p>
   <p>Select a size: </p>
