@@ -3,30 +3,33 @@
   background-color: $white;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   color: $taino-darkgray;
-  height: 70px;
+  height: 65px;
+  top: 0;
+  position: sticky;
   z-index:2;
+}
 
-  .nav-item i {
-    color: $taino-newgray;
-    font-size: 18px;
-    vertical-align: center;
-    padding: 12px 20px;
-  }
+.nav-item i {
+  color: $taino-newgray;
+  font-size: 18px;
+  vertical-align: center;
+  padding: 12px 20px;
+}
 
-  .navbar-brand img {
+.navbar-brand img {
   width: 120px;
-  }
+}
 
-  .navbar-collapse {
+.navbar-collapse {
   flex-grow: 0;
-  }
+}
 
-  .nav-item i:hover {
-    color: $taino-blue;
-    opacity: .8;
-  }
+.nav-item i:hover {
+  color: $taino-blue;
+  opacity: .8;
+}
 
-  .nav-link {
+.nav-link {
   color: $taino-mediumgray;
   font-style: $headers-font;
   font-weight: 500;
@@ -35,11 +38,14 @@
   padding: 10px 25px;
   text-decoration: none;
   text-transform: uppercase;
-  }
+}
 
-  .nav-link a {
-    padding: 10px 25px;
-  }
+// .nav-link a {
+//   padding: 10px 25px;
+// }
+.nav-link:hover {
+  color: $taino-blue;
+  opacity: .8;
 }
 
 .nav-item-centered {
