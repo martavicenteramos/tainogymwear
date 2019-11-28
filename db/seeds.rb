@@ -2,7 +2,7 @@
 # If you already have a db created please drop it and create a new with this
 # seed
 # require 'mechanize'
-require_relative 'gymsharkwomen-scraper'
+# require_relative 'gymsharkwomen-scraper'
 
 OrderProduct.destroy_all
 Order.destroy_all
