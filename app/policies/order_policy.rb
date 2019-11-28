@@ -12,4 +12,8 @@ class OrderPolicy < ApplicationPolicy
   def cart?
     true
   end
+
+  def checkout?
+    true
+  end
 end

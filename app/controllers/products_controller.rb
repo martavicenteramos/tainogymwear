@@ -5,15 +5,16 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
-    @user = current_user
-    if @user.products.present?
-      @user_products = @user.products
-      search = calculate_orders(@user_products)
-      best_match(search)
-    else
-      search = calculate_questions(@user)
-      best_match(search)
-    # Use @best_products to populate the personalised index
+    # @user = current_user
+    # if @user.products.present?
+    #   @user_products = @user.products
+    #   search = calculate_orders(@user_products)
+    #   best_match(search)
+    # else
+    #   search = calculate_questions(@user)
+    #   best_match(search)
+    # # Use @best_products to populate the personalised index
+    # end
   end
 
   def show
@@ -94,6 +95,7 @@ class ProductsController < ApplicationController
     @best_products << @best_cut
     @best_products << @best_type
     @best_products = @best_products.uniq{|t| t.ids }
+  end
 
   def check_user_questionaire
     if session[:questionaire].nil?
@@ -107,10 +109,5 @@ class ProductsController < ApplicationController
 
   def set_product
     @product = Product.find(params[:id])
-
   end
 end
-
-
-
-
