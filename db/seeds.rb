@@ -1,7 +1,7 @@
 # Use this file to create your database through the commands rails db:seed
 # If you already have a db created please drop it and create a new with this
 # seed
-require 'mechanize'
+# require 'mechanize'
 require_relative 'gymsharkwomen-scraper'
 
 OrderProduct.destroy_all
@@ -54,12 +54,12 @@ clothes = GymSharkWomenScraper.scrape
 
 
 # dummy image
-img = "https://images.unsplash.com/photo-1562886877-0be0db6aba84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80"
+# img = "https://images.unsplash.com/photo-1562886877-0be0db6aba84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80"
 
 
 # Products
 puts "Create all products"
-clothes.each do |st|
+clothes[0..10].each do |st|
     Product.create!(
     {
       name: st[:name],
@@ -67,7 +67,7 @@ clothes.each do |st|
       colour: Colour.all.sample,
       cut: Cut.all.sample,
       price: st[:price],
-      image_url: img
+      image_url: st[:image]
     }
   )
 
