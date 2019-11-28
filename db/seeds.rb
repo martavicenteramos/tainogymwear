@@ -114,7 +114,7 @@ img = "https://images.unsplash.com/photo-1562886877-0be0db6aba84?ixlib=rb-1.2.1&
 
 # Products & Picture & Cloudinary
 puts "Create all products"
-clothes.each do |st|
+clothes[0..5].each do |st|
    p = Product.create!(
     {
       name: st[:name],
