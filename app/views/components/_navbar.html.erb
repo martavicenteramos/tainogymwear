@@ -46,7 +46,33 @@
           </div>
         </li>
       <% else %>
+      <div class="nav-item-centered">
         <li class="nav-item">
+          <%= link_to "Category 1", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Category 2", "#", class: "nav-link" %>
+        </li>
+      </div>
+        <li class="nav-item">
+          <%= link_to "#" do %>
+            <i class="fas fa-search"></i>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "#" do %>
+            <i class="fas fa-heart"></i>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to cart_path do %>
+            <i class="fas fa-shopping-cart"></i>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+        </li>
+                <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
       <% end %>
