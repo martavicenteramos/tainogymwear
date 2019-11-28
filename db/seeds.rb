@@ -53,6 +53,9 @@ cleavage = Style.create(name: "Cleavage")
 # Initiate scraper
 clothes = GymSharkWomenScraper.scrape
 
+# dummy image
+img = "https://images.unsplash.com/photo-1562886877-0be0db6aba84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80"
+
 # Products
 puts "Create all products"
 clothes.each do |st|
@@ -63,7 +66,7 @@ clothes.each do |st|
       colour: Colour.all.sample,
       cut: Cut.all.sample,
       price: st[:price],
-      image_url: st[:image]
+      image_url: img
     }
   )
 end
@@ -164,7 +167,3 @@ Order.all.each do |order|
     });
   end
 end
-
-
-
-
