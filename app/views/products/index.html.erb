@@ -1,0 +1,13 @@
+
+<div class="container">
+  <% @products.each do |prod| %>
+    <%= link_to product_path(prod) do%>
+      <div class="border">
+        <p><%= prod.name %></p>
+        <p><%= prod.price %></p>
+        <p><%= prod.colour.name %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+

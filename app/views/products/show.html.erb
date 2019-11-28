@@ -1,0 +1,12 @@
+<div class="container">
+  <%= notice %>
+  <%= image_tag @product.image_url %>
+  <p><%= @product.name %></p>
+  <p><%= @product.price %></p>
+  <p>Select a size: </p>
+  <%= simple_form_for [@product, @order_product] do |f| %>
+    <%= f.input :size, collection: [ "XS", "S", "M", "L"] %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
+
