@@ -4,6 +4,7 @@ class Product < ApplicationRecord
   belongs_to :cut
   has_many :product_styles
   has_many :styles, through: :product_styles
+  has_many :pictures
 
   validates :product_type, presence: true
   validates :price_cents, presence: true
