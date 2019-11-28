@@ -2,11 +2,8 @@
 # If you already have a db created please drop it and create a new with this
 # seed
 require 'json'
-# require './gymsharkwomen-scraper.rb'
 require_relative 'gymsharkwomen-scraper'
-require 'byebug'
 require 'mechanize'
-# require 'gymshark.json'
 
 OrderProduct.destroy_all
 Order.destroy_all
@@ -56,6 +53,9 @@ cleavage = Style.create(name: "Cleavage")
 # Initiate scraper
 clothes = GymSharkWomenScraper.scrape
 
+# Image
+
+
 # Products
 puts "Create all products"
 clothes.each do |st|
@@ -69,7 +69,9 @@ clothes.each do |st|
       image_url: st[:image]
     }
   )
+
 end
+
 
 # One style per product products
 puts "Adding styles to the products"
