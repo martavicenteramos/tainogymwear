@@ -4,4 +4,5 @@ class Order < ApplicationRecord
   has_many :order_products
 
   validates :status, presence: true
+  monetize :total_value_cents
 end

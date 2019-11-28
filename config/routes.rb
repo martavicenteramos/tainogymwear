@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
+
   root to: 'pages#home'
   get "questionaire", to: 'pages#questionaire'
 
@@ -13,8 +15,13 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :show] do
     resources :order_products, only: [:create]
   end
-  resources :orders, only: [:index]
+
+  resources :orders, only: [:index] do
+    resources :payments, only: :new
+  end
+
   get "cart", to: "orders#cart"
+  post "checkout", to: "orders#checkout"
   resources :order_products, only: [:destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
