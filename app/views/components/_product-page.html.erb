@@ -1,0 +1,14 @@
+<div class="product-pictures">
+  <div class="pic-first-row">
+    <div class="product-photo"><%= image_tag @products.first.pictures.second.url%></div>
+    <div class="product-photo"><%= image_tag @products.first.pictures.third.url%></div>
+    <div class="product-photo"><%= image_tag @products.first.pictures.fourth.url%></div>
+  </div>
+  <div class="pic-sec-row">
+    <div class="product-photo"><%= image_tag @products.first.pictures.first.url, crop: :cover %></div>
+  </div>
+  <div class="pic-last-row">
+    <div class="product-photo"><%= image_tag @products.first.pictures.fifth.url, crop: :cover %></div>
+    <div class="product-photo"><%= image_tag @products.first.pictures[5].url, crop: :cover %></div>
+  </div>
+</div>
