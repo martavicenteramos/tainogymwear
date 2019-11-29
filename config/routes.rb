@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {
+   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
 
@@ -29,5 +29,7 @@ Rails.application.routes.draw do
   post "checkout", to: "orders#checkout"
 
   resources :order_products, only: [:destroy]
+
+  resources :users, only: [:show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
