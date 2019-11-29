@@ -1,5 +1,16 @@
-  <%= simple_form_for @order do |f| %>
-    <%= f.input :address %>
-    <%= f.submit :submit %>
-  <% end %>
+<h1 class="form-title">Shipping Information</h1>
+
+<%= simple_form_for @order do |f| %>
+  <div class="form-inputs basic-form">
+    <%= f.input :address,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Address" }%>
+    <%= f.input :order_id, :as => :hidden, :input_html => { :value => @order.id } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Continue to Payment", class: "blue-btn" %>
+  </div>
+<% end %>
 
