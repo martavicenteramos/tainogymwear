@@ -55,6 +55,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
     user_path(current_user.id)
   end
 
+  # def configure_permitted_parameters
+  #   devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name last_name])
+  #   devise_parameter_sanitizer.permit(:account_update, keys: %i[first_name last_name])
+  # end
+
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
