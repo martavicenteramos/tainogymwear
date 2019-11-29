@@ -24,3 +24,9 @@
 </div>
 
 
+
+
+<%= simple_form_for [@user_colour] do |f| %>
+  <%= f.input :colour, collection: @colours %>
+  <%= f.submit "Add a colour", class: "btn btn-primary" %>
+<% end %>

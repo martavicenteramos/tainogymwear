@@ -4,6 +4,16 @@ class PagesController < ApplicationController
   def home
   end
 
+  def users
+    @user = current_user
+    @user_style = UserStyle.new
+    @cut = Cut.new
+    @user_colour = UserColour.new
+    @user_product_type = UserProductType.new
+    @colours = Colour.all
+  end
+
   def questionaire
   end
+
 end
