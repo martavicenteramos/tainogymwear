@@ -12,6 +12,7 @@ class PagesController < ApplicationController
     @user_product_type = UserProductType.new
     @colours = Colour.all
     @styles = Style.all
+    @types = ProductType.all
 
   end
 

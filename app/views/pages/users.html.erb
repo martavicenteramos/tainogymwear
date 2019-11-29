@@ -35,3 +35,9 @@
   <%= f.input :style, collection: @styles %>
   <%= f.submit "Add a style", class: "btn btn-primary" %>
 <% end %>
+
+<%= simple_form_for [@user_product_type] do |f| %>
+  <%= f.input :product_type, collection: @types %>
+  <%= f.submit "Add a type", class: "btn btn-primary" %>
+<% end %>
+
