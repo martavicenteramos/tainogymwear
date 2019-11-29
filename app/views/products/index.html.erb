@@ -1,12 +1,38 @@
+<div class="t-container">
+  <div>
+    <div>
+      // Space Marker
+    </div>
+  </div>
+  <div class="row">
+  <div class="left-side-bar col-lg-2">
+    <div class="search-elements">
+      <h5><strong>Shop by Category</strong></h5>
+      <br>
+      <p>Leggings</p>
+      <p>Shorts</p>
+      <p>Crop-tops</p>
+      <p>Sports-bras</p>
+      <p>T-shirts</p>
+      <p>Hoodies</p>
+    </div>
+  </div>
+  <div class="cards col-lg-10">
+    <% @products.each do |prod| %>
+      <div class="card-trip">
+        <%= link_to product_path(prod) do%>
 
-<div class="container">
-  <% @products.each do |prod| %>
-    <%= link_to product_path(prod) do%>
-      <div class="border">
-        <p><%= prod.name %></p>
-        <p><%= prod.price %></p>
-        <p><%= prod.colour.name %></p>
+          <div class="img" style="background-image: url(<%= cl_image_path prod.pictures.first.url%>)">
+          </div>
+          <div class="img-2" style="display:none; background-image: url(<%= cl_image_path prod.pictures.first.url%>)"></div>
+            <div class="card-trip-infos">
+                <h5><strong><%= prod.name %></strong></h5>
+                <p><%= prod.price %></p>
+                <p><%= prod.colour.name %></p>
+            </div>
+        <% end %>
       </div>
     <% end %>
-  <% end %>
+  </div>
+  </div>
 </div>
