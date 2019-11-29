@@ -6,6 +6,6 @@ class UserProductTypePolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    record = user
   end
 end

@@ -5,7 +5,6 @@ class UserColoursController < ApplicationController
   end
 
   def create
-
     @user = current_user
 
     @user_colour = UserColour.new(colour_id: params[:user_colour][:colour])
