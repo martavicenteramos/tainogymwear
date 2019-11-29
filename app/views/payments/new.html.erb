@@ -3,9 +3,26 @@
   <div class="row py-4">
     <div class="col-md-3"></div>
     <div class="col">
-      <h1>Checkout summary</h1>
+      <h1>Review your information:</h1>
+      <br>
+      <span>
+        <h2>NAME:</h2>
+        <h5><%= current_user.first_name %> <%= current_user.last_name %></h5>
+      </span>
+      <br>
+      <span>
+        <h2>E-MAIL:</h2>
+        <h5><%= current_user.email %></h5>
+      </span>
+      <br>
+      <span>
+        <h2>ADDRESS:</h2>
+        <h5><%= @order.address %></h5>
+      </span>
+      <br>
+      <h2>Checkout summary:</h2>
       <p>Purchase of <strong>for <strong><%= humanized_money_with_symbol @order.total_value %></strong></p>
-      <button id="pay" class="btn btn-primary">Pay</button>
+      <button id="pay" class="blue-btn checkout-btn">Pay</button>
       <script src="https://js.stripe.com/v3/"></script>
       <script>
         const paymentButton = document.getElementById('pay');
