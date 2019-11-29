@@ -1,13 +1,30 @@
-<div class="container">
-  <%= notice %>
-  <%= cl_image_tag @product.pictures.first.url, crop: :cover %>
+<div class="prod-pic-container">
+  <div class=col>
+    <div class="row">
+      <div class="pic"><%= image_tag @product.pictures[1].url, height: 400, crop: :cover %></div>
+      <div class="pic"><%= image_tag @product.pictures[2].url, height: 400, crop: :cover %></div>
+      <div class="pic"><%= image_tag @product.pictures[3].url, height: 400, crop: :cover %></div>
+    </div>
+    <div class="row">
+      <div class="pic"><%= image_tag @product.pictures[0].url, height: 400, crop: :cover %></div>
+    </div>
+    <div class="row">
+      <div class="pic"><%= image_tag @product.pictures[4].url, height: 400, crop: :cover %></div>
+      <div class="pic"><%= image_tag @product.pictures[5].url, height: 400, crop: :cover %></div>
+    </div>
+  </div>
 
-  <p><%= @product.name %></p>
-  <p><%= @product.price %></p>
-  <p>Select a size: </p>
-  <%= simple_form_for [@product, @order_product] do |f| %>
-    <%= f.input :size, collection: [ "XS", "S", "M", "L"] %>
-    <%= f.button :submit %>
-  <% end %>
-</div>
+  <div class="col product-page-details">
+     <%= notice %>
+    <h2><%= @product.name %></h2>
+    <h5><%= @product.price %></h5>
+    <p>Select a size: </p>
+    <%= simple_form_for [@product, @order_product] do |f| %>
+      <div class="form-inputs size-form">
+      <%= f.input :size, collection: [ "XS", "S", "M", "L"] %>
+      <%= f.button :submit, "Add to cart", class: "blue-btn checkout-btn" %>
+    <% end %>
+    </div>
+  </div>
 
+ </div>
