@@ -108,3 +108,15 @@
   font-family: $headers-font;
   opacity: .4;
 }
+
+.btn-preferences {
+  font-size: 10px;
+  background-color: $taino-newgray;
+  width: 200px;
+  padding: 0px;
+  opacity: .7;
+  margin-bottom: 15px;
+  text-align: center;
+  position: relative;
+  left: 30%;
+}

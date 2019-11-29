@@ -1,7 +1,8 @@
 class ProfilesController < ApplicationController
 
   def show
-    raise
+    @user = current_user
+    authorize @user
   end
 
   def update

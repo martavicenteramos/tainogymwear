@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {
+   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
 
@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
   get "questionaire", to: 'pages#questionaire'
+  get "users", to: 'pages#users'
 
 
   get "profile", to: 'profiles#show', as: :profile
@@ -29,5 +30,18 @@ Rails.application.routes.draw do
   post "checkout", to: "orders#checkout"
 
   resources :order_products, only: [:destroy]
+
+  resources :user_colours, only: [:new, :create]
+
+  resources :user_styles, only: [:new, :create]
+
+  resources :user_product_types, only: [:new, :create]
+
+
+  # resources :users, only: [:show] do
+  #   resources :user_style
+  #   resources :user_colour
+  #   resources :user_product_type
+  # end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

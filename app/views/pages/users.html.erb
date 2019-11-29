@@ -1,0 +1,46 @@
+<div>
+  <h3 class="form-title"> Hello, <%= @user.first_name %> <%= @user.last_name %>! </h3>
+</div>
+<br>
+<div class="user-information">
+  <span>
+    <h2>NAME:</h2>
+    <h5><%= @user.first_name %> <%= @user.last_name %></h5>
+  </span>
+  <span>
+    <h2>E-MAIL:</h2>
+    <h5><%= @user.email %></h5>
+  </span>
+
+  <span class="form-actions">
+    <%= link_to 'Edit details', edit_user_registration_path, class: 'blue-btn'%>
+  </span>
+</div>
+<br>
+<br>
+
+<div class="user-preferences">
+  <div class="center">
+    <h3 class="form-title"> MY PREFERENCES </h3>
+
+  </div>
+  <div class="form-inputs basic-form">
+    <%= simple_form_for [@user_colour] do |f| %>
+      <%= f.input :colour, collection: @colours %>
+      <%= f.submit "Add a colour", class: "gray-btn btn-preferences" %>
+    <% end %>
+
+    <%= simple_form_for [@user_style] do |f| %>
+      <%= f.input :style, collection: @styles %>
+      <%= f.submit "Add a style", class: "gray-btn btn-preferences" %>
+    <% end %>
+
+    <%= simple_form_for [@user_product_type] do |f| %>
+      <%= f.input :product_type, collection: @types %>
+      <%= f.submit "Add a type", class: "gray-btn btn-preferences" %>
+    <% end %>
+  </div>
+</div>
+
+
+
