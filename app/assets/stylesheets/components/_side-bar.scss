@@ -1,0 +1,19 @@
+.left-side-bar {
+  height: calc(100vh-65px) !important; /* Full-height: remove this if you want "auto" height */
+  z-index: 1; /* Stay on top */
+}
+
+.search-elements {
+  position:sticky;
+  top: 75px; /* Stay at the top */
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .left-side-bar {
+    display: none;
+  }
+  .search-elements {
+    display: none;
+  }
+}
