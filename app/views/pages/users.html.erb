@@ -18,26 +18,29 @@
 </div>
 <br>
 <br>
-<div class="center">
-  <h3 class="form-title"> MY PREFERENCES </h3>
-  <%= link_to 'Edit preferences', edit_user_registration_path, class: 'blue-btn form-actions'%>
+
+<div class="user-preferences">
+  <div class="center">
+    <h3 class="form-title"> MY PREFERENCES </h3>
+
+  </div>
+  <div class="form-inputs basic-form">
+    <%= simple_form_for [@user_colour] do |f| %>
+      <%= f.input :colour, collection: @colours %>
+      <%= f.submit "Add a colour", class: "gray-btn btn-preferences" %>
+    <% end %>
+
+    <%= simple_form_for [@user_style] do |f| %>
+      <%= f.input :style, collection: @styles %>
+      <%= f.submit "Add a style", class: "gray-btn btn-preferences" %>
+    <% end %>
+
+    <%= simple_form_for [@user_product_type] do |f| %>
+      <%= f.input :product_type, collection: @types %>
+      <%= f.submit "Add a type", class: "gray-btn btn-preferences" %>
+    <% end %>
+  </div>
 </div>
 
 
-
-
-<%= simple_form_for [@user_colour] do |f| %>
-  <%= f.input :colour, collection: @colours %>
-  <%= f.submit "Add a colour", class: "btn btn-primary" %>
-<% end %>
-
-<%= simple_form_for [@user_style] do |f| %>
-  <%= f.input :style, collection: @styles %>
-  <%= f.submit "Add a style", class: "btn btn-primary" %>
-<% end %>
-
-<%= simple_form_for [@user_product_type] do |f| %>
-  <%= f.input :product_type, collection: @types %>
-  <%= f.submit "Add a type", class: "btn btn-primary" %>
-<% end %>
 
