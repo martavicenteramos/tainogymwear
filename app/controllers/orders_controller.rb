@@ -33,16 +33,16 @@ class OrdersController < ApplicationController
     order = Order.find(params[:order].to_i)
     authorize order
     session = Stripe::Checkout::Session.create(
-    payment_method_types: ['card'],
-    line_items: [{
-      name: "Your Taíno order!",
-      amount: order.total_value_cents,
-      currency: 'eur',
-      quantity: 1
-    }],
-      success_url: products_url,
-      cancel_url: products_url
-  )
+      payment_method_types: ['card'],
+      line_items: [{
+        name: "Your Taíno order!",
+        amount: order.total_value_cents,
+        currency: 'eur',
+        quantity: 1
+      }],
+        success_url: products_url,
+        cancel_url: products_url
+    )
 
   order.update(checkout_session_id: session.id)
   redirect_to new_order_payment_path(order)
