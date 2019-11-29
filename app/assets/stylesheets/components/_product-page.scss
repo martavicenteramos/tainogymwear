@@ -1,3 +1,54 @@
+.main-container-pics {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.pic-1 {
+  grid-column: 1 / span 1;
+  grid-row: 1/ span 1;
+}
+
+.pic-2 {
+  grid-column: 2 / span 1;
+  grid-row: 1/ span 1;
+}
+
+.pic-3 {
+  grid-column: 3 / span 1;
+  grid-row: 1/ span 1;
+}
+
+.pic-4 {
+  grid-column: 1 / span 3;
+  grid-row: 2/ span 2;
+}
+
+.product-page-details {
+  grid-column: 4 / span 1;
+  grid-row: 1/ span 1;
+}
+
+.pic-5 {
+ width: 50%;
+ img {
+  width: 100%;
+ }
+}
+
+.pic-6 {
+ width: 50%;
+ img {
+  width: 100%;
+ }
+}
+
+.pic-5-6 {
+  grid-column: 1 / span 3;
+  grid-row: 4 / span 1;
+}
+
 .prod-pic-container {
   margin: 0 auto;
   max-width: 250rem;
@@ -11,55 +62,55 @@
 //   width: 600px;
 // }
 
-.pic {
-  padding: 0px;
-  margin: 0px;
-}
+// .pic {
+//   padding: 0px;
+//   margin: 0px;
+// }
 
-.first-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-}
+// .first-row {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr;
+//   grid-gap: 16px;
+// }
 
-.main-pic {
-  display: block;
-  margin-left: 15px;
-  margin-top: 16px;
-  width: 100%;
-  background-size: fill;
-  height: 1200px;
-  img {
-    max-height: -webkit-fill-available;
-    display: block;
-    width: 100%;
-  }
-}
+// .main-pic {
+//   display: block;
+//   margin-left: 15px;
+//   margin-top: 16px;
+//   width: 100%;
+//   background-size: cover;
+//   height: 1200px;
+//   img {
+//     max-height: -webkit-fill-available;
+//     display: block;
+//     width: 100%;
+//   }
+// }
 
-.last-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 16px;
-}
+// .last-row {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+//   grid-gap: 16px;
+// }
 
-.pic-2 {
-  height: 520px;
-  width: 100%;
-  background-size: fill;
-  img {
-    max-width: -webkit-fill-available;
-  }
-}
+// .pic-2 {
+//   height: 520px;
+//   width: 100%;
+//   background-size: fill;
+//   img {
+//     max-width: -webkit-fill-available;
+//   }
+// }
 
-.product-page-details {
-  margin-left: 80px;
+// .shopping {
+//   left: 90vw;
 
-  .shopping {
-  position: sicky;
-  top: 85px;
-  z-index: 2;
-  }
-}
+//   .shopping {
+//   position: sicky;
+//   top: 85px;
+//   z-index: 2;
+//   }
+// }
 
 
 
