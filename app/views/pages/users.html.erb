@@ -30,3 +30,8 @@
   <%= f.input :colour, collection: @colours %>
   <%= f.submit "Add a colour", class: "btn btn-primary" %>
 <% end %>
+
+<%= simple_form_for [@user_style] do |f| %>
+  <%= f.input :style, collection: @styles %>
+  <%= f.submit "Add a style", class: "btn btn-primary" %>
+<% end %>

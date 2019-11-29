@@ -33,6 +33,11 @@ Rails.application.routes.draw do
 
   resources :user_colours, only: [:new, :create]
 
+  resources :user_styles, only: [:new, :create]
+
+  resources :user_product_types, only: [:new, :create]
+
+
   # resources :users, only: [:show] do
   #   resources :user_style
   #   resources :user_colour

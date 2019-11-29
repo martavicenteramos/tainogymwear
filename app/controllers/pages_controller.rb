@@ -11,6 +11,8 @@ class PagesController < ApplicationController
     @user_colour = UserColour.new
     @user_product_type = UserProductType.new
     @colours = Colour.all
+    @styles = Style.all
+
   end
 
   def questionaire
