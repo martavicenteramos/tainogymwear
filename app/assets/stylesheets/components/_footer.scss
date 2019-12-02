@@ -1,26 +1,78 @@
 .footer {
-  background: #F4F4F4;
+  background: rgba(240, 240, 240, .7);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  height: 100px;
-  padding: 0px 50px;
+  flex-direction: column;
+  height: 375px;
   color: rgba(0,0,0,0.3);
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  padding: 45px 0px;
+
+  h2 {
+    color: $black;
+    opacity: .9;
+    font-size: 15px;
+  }
 }
+
+.footer-logo {
+  width: 130px;
+}
+
+.footer .container-fluid .footer-elements {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 45px 180px;
+  width: 100%;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+}
+
+.links {
+  text-decoration: none;
+  list-style: none;
+  margin-bottom: 0px;
+  padding-left: 0px;
+
+  li:hover {
+    opacity: .6;
+    color: $taino-blue;
+  }
+}
+
+.links-text {
+  line-height: 30px;
+  margin: 0px;
+  color: $taino-darkgray;
+
+  a:hover {
+    li:hover {
+    opacity: .6;
+    color: $taino-blue;
+  }
+  }
+}
+
+
 .footer-links {
   display: flex;
   align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 30px;
+
+  i {
+    font-size: 23px;
+    color: $taino-newgray;
+    opacity: .7;
+  }
+  i:hover {
+    opacity: .6;
+    color: $taino-blue;
+  }
 }
-.footer-links a {
-  color: black;
-  opacity: 0.15;
-  text-decoration: none;
-  font-size: 24px;
-  padding: 0px 10px;
-}
-.footer-links a:hover {
-  opacity: 1;
-}
-.footer .fa-heart {
-  color: #D23333;
-}
+
