@@ -28,6 +28,7 @@ class Recommended
     end
     # sort by weight in descending order
     sorted_recommended = recommended.sort_by { |key, value| value }.reverse
+    sorted_recommended = sorted_recommended.map(&:first)
   end
 
   def calculate_questions(user)
