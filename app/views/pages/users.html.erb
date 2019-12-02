@@ -18,6 +18,30 @@
 </div>
 <br>
 <br>
+<div class="user-information">
+  <span>
+    <h2>COLOURS:</h2>
+    <%= @user.colours.each do |color|%>
+    <h5>colour.name</h5>
+    <% end %>
+  </span>
+  <span>
+    <h2>PRODUCT TYPES:</h2>
+    <%= @user.product_types.each do |product_type|%>
+    <h5>product_type.name</h5>
+    <% end %>
+  </span>
+  <span>
+    <h2>PRODUCT STYLES:</h2>
+    <%= @user.styles.each do |style|%>
+    <h5>style.name</h5>
+    <% end %>
+  </span>
+  <span>
+    <h2>PRODUCT CUT:</h2>
+    <h5><%= @user.cut %></h5>
+  </span>
+</div>
 
 <div class="user-preferences">
   <div class="center">

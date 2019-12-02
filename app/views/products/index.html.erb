@@ -5,7 +5,7 @@
   <div class="row">
   <div class="left-side-bar col-lg-2">
     <div class="search-elements">
-      <h5><strong>Shop by Category</strong></h5>
+      <h5>Shop by Category</h5>
       <br>
       <p>Leggings</p>
       <p>Shorts</p>
@@ -23,8 +23,8 @@
           </div>
           <div class="img-2" style="display:none; background-image: url(<%= cl_image_path prod.pictures.first.url%>)"></div>
             <div class="card-trip-infos">
-                <h5><strong><%= prod.name %></strong></h5>
-                <p><%= prod.price %></p>
+                <h2><%= prod.name %></h2>
+                <h5><%= prod.price %> €</h5>
                 <p><%= prod.colour.name %></p>
             </div>
         <% end %>
