@@ -6,22 +6,24 @@
   </div>
 
   <div class="container-fluid">
-    <div class="footer-elements">
-      <ul class="links">
+    <div class="row footer-elements">
+      <ul class="col-sm links">
         <li><h2>TAÍNO</h2></li><br>
         <li><h4><%= link_to "MEET OUT TEAM", "#", class: "links-text" %></h4></li>
-        <li><h4><%= link_to "OUR PRODUCTS", "#", class: "links-text" %></h4></li>
+        <li><h4><%= link_to "OUR PRODUCTS", products_path, class: "links-text" %></h4></li>
         <li><h4><%= link_to "F.A.Q", "#", class: "links-text" %></h4></li>
       </ul>
-      <ul class="links">
+      <br>
+      <ul class="col-sm links">
         <li><h2>MY ACCOUNT</h2></li><br>
         <li><h4><%= link_to "LOGIN", new_user_session_path, class: "links-text" %></h4></li>
         <li><h4><%= link_to "SIGN UP", new_user_registration_path, class: "links-text" %></h4></li>
         <li><h4><%= link_to "MY WISHLIST", "#", class: "links-text" %></h4></li>
         <li><h4><%= link_to "MY ORDERS", orders_path, class: "links-text" %></h4></li>
       </ul>
-      <div class="contacts">
-        <h2>CONTACT US:</h2>
+      <br>
+      <div class="col-sm contacts">
+        <h2>CONTACT US:</h2> <br>
         <div class="footer-links">
           <a href="#"><i class="fab fa-instagram"></i></a>
           <a href="#"><i class="fab fa-facebook"></i></a>
@@ -29,11 +31,8 @@
           <a href="#"><i class="fas fa-envelope"></i></i></a>
         </div>
       </div>
-      </div>
+    </div>
   </div>
 </div>
-
-
-
 
 
