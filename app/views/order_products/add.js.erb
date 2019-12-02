@@ -1,0 +1,9 @@
+var add = document.getElementById("order-quantity-<%= @order_product.id %>");
+add.innerHTML = parseInt(add.textContent) + 1;
+
+var productPrice = document.getElementById("order-price-<%= @order_product.id %>");
+productPrice.innerHTML = parseInt(productPrice.textContent) + <%= @order_product.product.price %>;
+
+var totalPrice = document.getElementById("order-total-value");
+totalPrice.innerHTML = parseInt(totalPrice.textContent) + <%= @order_product.product.price %>;
+
