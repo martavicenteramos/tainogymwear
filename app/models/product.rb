@@ -11,4 +11,16 @@ class Product < ApplicationRecord
   # validates :image_url, presence: true
 
   monetize :price_cents
+
+  include PgSearch::Model
+  pg_search_scope :global_search,
+    associated_against: {
+      cut: [:name],
+      product_type: [:name],
+      colour: [:name],
+      styles: [:name]
+    },
+    using: {
+      tsearch: { prefix: true, any_word: true }
+    }
 end
