@@ -6,6 +6,6 @@ class UserStylePolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    reccord = user
   end
 end

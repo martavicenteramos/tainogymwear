@@ -6,6 +6,6 @@ class UserColourPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    record = user
   end
 end
