@@ -1,7 +1,7 @@
 # Use this file to create your database through the commands rails db:seed
 # If you already have a db created please drop it and create a new with this
 # seed
-# require 'mechanize'
+# # require 'mechanize'
 class GymSharkWomenScraper
   def self.scrape
     products = []
@@ -57,6 +57,61 @@ class GymSharkWomenScraper
   end
 end
 
+class DoYouEvenWomenScraper
+  def self.scrape
+    products = []
+    agent = Mechanize.new
+    agent.user_agent_alias = 'Mac Safari'
+    limit = 1 # page limit in url
+    for page_number in 1..limit
+      url = URI("https://www.doyoueven.com/collections/women-all?page=#{page_number}")
+      # Search each link inside a card
+      agent.get(url).search(".productGrid .productItem .details a").each do |link|
+        ######TODO 1: will click the link and scrape data inside that link
+          agent_inside = Mechanize.new
+          agent_inside.user_agent_alias = 'Mac Safari'
+          inside_page_link = "https://www.doyoueven.com#{link[:href]}"
+          ## We enter the page for each link and save the data we want
+          current_agent = agent_inside.get(inside_page_link)
+          product = {
+            name: get_place_name(current_agent),
+            price: get_price_range(current_agent),
+            image: get_image(current_agent)
+          }
+          products << product
+      end
+    end
+    save(products)
+      products
+  end
+
+  private
+
+
+  def self.get_price_range(agent)
+    cost_element = agent.search('.price').text
+    cost = cost_element.match(/\d+/)
+    cost && cost[0] != '' ? cost[0].to_f / 2 : 0
+  end
+  def self.get_place_name(agent)
+    return agent.search(".title").text
+  end
+
+  def self.get_image(agent)
+    image_array = []
+    agent.search(".ImagesPart a").each do |url|
+      image_array << url[:href].split("//")[1]
+    end
+    return image_array
+  end
+
+  def self.save(data)
+    File.open('doyouevenwomen.json', "w+") do |f|
+      f << data.to_json
+    end
+  end
+end
+
 
 OrderProduct.destroy_all
 Order.destroy_all
@@ -106,16 +161,17 @@ glutes = Style.create(name: "Glutes")
 cleavage = Style.create(name: "Cleavage")
 
 # Initiate scraper
-clothes = GymSharkWomenScraper.scrape
+gym_shark_scraper = GymSharkWomenScraper.scrape
+do_you_even_scraper = DoYouEvenWomenScraper.scrape
 
 # dummy image
-img = "https://images.unsplash.com/photo-1562886877-0be0db6aba84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80"
+# img = "https://images.unsplash.com/photo-1562886877-0be0db6aba84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80"
 
 
 # Products & Picture & Cloudinary
-puts "Create all products"
-clothes[0..30].each do |st|
-   p = Product.create!(
+puts "Create GymSharkWomen products"
+gym_shark_scraper[0..50].each do |st|
+   gss = Product.create!(
     {
       name: st[:name],
       product_type: ProductType.all.sample,
@@ -128,14 +184,41 @@ clothes[0..30].each do |st|
         uploaded_from_scrapper = Cloudinary::Uploader.upload(img, options = {})
         Picture.create!(
   {
-        url: uploaded_from_scrapper["secure_url"],
-        product_id: p.id
+        remote_url_url: uploaded_from_scrapper["secure_url"],
+        product_id: gss.id
   })
           rescue => e
           puts e
       end
   end
+  puts gss
 end
+
+puts "Create DoYouEvenWomen products"
+do_you_even_scraper[0..50].each do |st|
+   dyes = Product.create!(
+    {
+      name: st[:name],
+      product_type: ProductType.all.sample,
+      colour: Colour.all.sample,
+      cut: Cut.all.sample,
+      price: st[:price]
+    })
+    st[:image].each do |img|
+      begin
+        uploaded_from_scrapper = Cloudinary::Uploader.upload("https://" + img, options = {})
+        Picture.create!(
+          {
+            remote_url_url: uploaded_from_scrapper["secure_url"],
+            product_id: dyes.id
+          })
+      rescue => e
+        puts e
+      end
+    end
+    puts dyes
+end
+
 
 #Cloudinary & Picture
 
