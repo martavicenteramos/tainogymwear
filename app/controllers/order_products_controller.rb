@@ -40,11 +40,16 @@ class OrderProductsController < ApplicationController
   def remove
     @order_product = OrderProduct.find(params[:id])
     authorize @order_product
-    check_quantity(@order_product)
-    @order_product.quantity -= 1
-    @order_product.order.total_value -= @order_product.product.price
-    @order_product.save
-    @order_product.order.save
+    if @order_product.quantity == 1
+      @order_product.order.total_value -= @order_product.product.price
+      @order_product.order.save
+      @order_product.destroy
+    else
+      @order_product.quantity -= 1
+      @order_product.order.total_value -= @order_product.product.price
+      @order_product.save
+      @order_product.order.save
+    end
   end
 
   def destroy

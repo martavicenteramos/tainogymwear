@@ -4,7 +4,7 @@
   <% else %>
   <div class="mt-3">
     <% @order.order_products.each do |order_product| %>
-      <div class="mini-card-product">
+      <div class="mini-card-product" id="order-card-<%= order_product.id %>">
         <div class="mini-card-image">
           <%= cl_image_tag order_product.product.pictures.first.url %>
         </div>

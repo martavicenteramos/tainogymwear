@@ -1,9 +1,14 @@
-var remove = document.getElementById("order-quantity-<%= @order_product.id %>");
-remove.innerHTML = parseInt(remove.textContent) - 1;
-
-
 var productPrice = document.getElementById("order-price-<%= @order_product.id %>");
-productPrice.innerHTML = parseInt(productPrice.textContent) - <%= @order_product.product.price %>;
-
+var remove = document.getElementById("order-quantity-<%= @order_product.id %>");
 var totalPrice = document.getElementById("order-total-value");
-totalPrice.innerHTML = parseInt(totalPrice.textContent) - <%= @order_product.product.price %>;
+
+if (remove.innerHTML === "1") {
+  console.log("hello");
+  document.getElementById("order-card-<%= @order_product.id %>").style.display = "none";
+  totalPrice.innerHTML = parseInt(totalPrice.textContent) - <%= @order_product.product.price %>;
+} else {
+  remove.innerHTML = parseInt(remove.textContent) - 1;
+  productPrice.innerHTML = parseInt(productPrice.textContent) - <%= @order_product.product.price %>;
+  totalPrice.innerHTML = parseInt(totalPrice.textContent) - <%= @order_product.product.price %>;
+}
+
