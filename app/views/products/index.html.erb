@@ -8,10 +8,10 @@
       <h5><strong>Shop by Category</strong></h5>
       <br>
       <%= simple_form_for :query, url: {controller: 'products', action: 'index'}, method: :get do |f| %>
-        <%= f.input :cut, as: :select, required: false, collection: Cut.all %>
-        <%= f.input :type, as: :select, required: false, collection: ProductType.all %>
-        <%= f.input :style, as: :select, required: false, collection: Style.all %>
-        <%= f.input :colour, as: :select,include_hidden: false, required: false, collection: Colour.all %>
+        <%= f.input :cut, as: :select, required: false, collection: Cut.all, value_method: :name %>
+        <%= f.input :type, as: :select, required: false, collection: ProductType.all,value_method: :name %>
+        <%= f.input :style, as: :check_boxes, required: false, collection: Style.all,value_method: :name %>
+        <%= f.input :colour, as: :check_boxes,include_hidden: false, required: false, collection: Colour.all, value_method: :name %>
         <%= f.submit :SEARCH, class: "btn-form" %>
       <% end %>
     </div>

@@ -17,23 +17,11 @@ class ProductsController < ApplicationController
     if params[:query].present?
       @products = Product.all
       @filter = params[:query]
-      # @filter[:colour].reject!(&:blank?).to_s
-      # @filter[:colour].map(&:to_i)
-      @products = Product.joins(:product_styles).where(:product_styles => {:style_id => @filter["style"].to_i }) if @filter["style"].present?
-      @products = @products.where('colour_id = ?', @filter[:colour]) if @filter["colour"].present?
-      @products = @products.where('product_type_id = ?', @filter[:type].to_i) if @filter["type"].present?
-      @products = @products.where('cut_id = ?', @filter['cut'].to_i) if @filter["cut"].present?
+      @products = @products.global_search(@filter[:cut]) if @filter[:cut].present?
+      @products = @products.global_search(@filter[:colour]) if @filter[:colour].present?
+      @products = @products.global_search(@filter[:style]) if @filter[:style].present?
+      @products = @products.global_search(@filter[:type]) if @filter[:type].present?
     end
-    # @user = current_user
-    # if @user.products.present?
-    #   @user_products = @usenu tai r.products
-    #   search = calculate_orders(@user_products)
-    #   best_match(search)
-    # else
-    #   search = calculate_questions(@user)
-    #   best_match(search)
-    # # Use @best_products to populate the personalised index
-    # end
   end
 
   def show

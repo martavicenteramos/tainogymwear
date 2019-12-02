@@ -17,7 +17,8 @@ class Product < ApplicationRecord
     associated_against: {
       cut: [:name],
       product_type: [:name],
-      colour: [:name]
+      colour: [:name],
+      styles: [:name]
     },
     using: {
       tsearch: { prefix: true, any_word: true }
