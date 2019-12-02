@@ -7,17 +7,18 @@
   top: 0;
   position: sticky;
   z-index:2;
+  padding: 8px 20px;
 }
 
 .nav-item i {
   color: $taino-newgray;
-  font-size: 18px;
+  font-size: 16px;
   vertical-align: center;
-  padding: 12px 20px;
+  padding: 12px 15px;
 }
 
 .navbar-brand img {
-  width: 120px;
+  width: 130px;
 }
 
 .navbar-collapse {
@@ -35,7 +36,7 @@
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 5px;
-  padding: 10px 25px;
+  padding: 8px 25px;
   text-decoration: none;
   text-transform: uppercase;
 }

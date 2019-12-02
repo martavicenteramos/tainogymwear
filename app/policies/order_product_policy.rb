@@ -12,4 +12,12 @@ class OrderProductPolicy < ApplicationPolicy
   def destroy?
     true
   end
+
+  def add?
+    record.order.user == user
+  end
+
+  def remove?
+    record.order.user == user
+  end
 end
