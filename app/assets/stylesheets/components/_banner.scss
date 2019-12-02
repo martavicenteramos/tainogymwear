@@ -4,12 +4,11 @@
   background-position: center;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   display: flex;
-  filter:brightness(100%);
+  filter:brightness(120%);
   justify-content: right;
-  position: absolute;
-  overflow: hidden;
+  // overflow: hidden;
   width: 100%;
-  height: 95%;
+  height: 100vh;
   padding-right: 20%
 }
 
@@ -59,4 +58,12 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+
+// Banner for the cart
+.banner-cart {
+  background-size: cover;
+  background-position: center;
+  height: 30vh;
 }

@@ -26,6 +26,15 @@ h3 {
   text-transform: uppercase;
 }
 
+h4 {
+  color: $taino-darkgray;
+  font-style: $headers-font;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
 h5 {
   color: $taino-mediumgray;
   font-style: $headers-font;

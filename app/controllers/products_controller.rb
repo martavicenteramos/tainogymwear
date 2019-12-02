@@ -14,17 +14,13 @@ class ProductsController < ApplicationController
       @products = @products.map{|t| t}.uniq
     end
 
-
-    # @user = current_user
-    # if @user.products.present?
-    #   @user_products = @usenu tai r.products
-    #   search = calculate_orders(@user_products)
-    #   best_match(search)
-    # else
-    #   search = calculate_questions(@user)
-    #   best_match(search)
-    # # Use @best_products to populate the personalised index
-    # end
+    if params[:filter].present?
+      @products = Product.all
+      @filter = Filter.new(params[:filter])
+      @products = @filter.filter(@products)
+    else
+      @filter = Filter.new
+    end
   end
 
   def show

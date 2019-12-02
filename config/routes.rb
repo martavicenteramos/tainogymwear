@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     resources :order_products, only: [:create]
   end
 
-  resources :orders, only: [:index] do
+  resources :orders do
     resources :payments, only: :new
   end
 
@@ -29,13 +29,21 @@ Rails.application.routes.draw do
 
   post "checkout", to: "orders#checkout"
 
-  resources :order_products, only: [:destroy]
+  resources :order_products, only: [:destroy] do
+    member do
+      patch :add, defaults: { format: :js }
+      patch :remove
+    end
+  end
 
   resources :user_colours, only: [:new, :create]
 
   resources :user_styles, only: [:new, :create]
 
   resources :user_product_types, only: [:new, :create]
+
+  # patch 'order_products/:id/add', to: 'order_products#add', as: 'add'
+  # patch 'order_products/:id/remove', to: 'order_products#remove', as: 'remove'
 
 
   # resources :users, only: [:show] do
