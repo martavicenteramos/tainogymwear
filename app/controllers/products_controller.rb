@@ -14,13 +14,12 @@ class ProductsController < ApplicationController
       @products = @products.map{|t| t}.uniq
     end
 
-    if params[:query].present?
+    if params[:filter].present?
       @products = Product.all
-      @filter = params[:query]
-      @products = @products.global_search(@filter[:cut]) if @filter[:cut].present?
-      @products = @products.global_search(@filter[:colour]) if @filter[:colour].present?
-      @products = @products.global_search(@filter[:style]) if @filter[:style].present?
-      @products = @products.global_search(@filter[:type]) if @filter[:type].present?
+      @filter = Filter.new(params[:filter])
+      @products = @filter.filter(@products)
+    else
+      @filter = Filter.new
     end
   end
 
