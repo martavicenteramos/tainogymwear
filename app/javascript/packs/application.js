@@ -10,3 +10,14 @@ function closeNav() {
   document.getElementById("main").style.marginLeft= "0";
 }
 
+// document.addEventListener("DOMContentLoaded", function(){
+//   const addButtons = document.querySelectorAll(".btn-counter-add");
+
+//   addButtons.forEach(function(button) {
+//     button.addEventListener("click", (event) => {
+//       const url = event.target.dataset["url"];
+//       Rails.ajax({ url: url, type: "PATCH" });
+//     });
+//   });
+// });
+

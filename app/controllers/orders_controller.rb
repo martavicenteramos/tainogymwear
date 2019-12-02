@@ -1,8 +1,4 @@
 class OrdersController < ApplicationController
-  def index
-    @orders = policy_scope(Order).where(user_id: current_user.id).where(status: "pending")
-  end
-
   def cart
     @order = current_user.find_or_create_pending_order
     @order_id = @order.id
@@ -40,12 +36,12 @@ class OrdersController < ApplicationController
         currency: 'eur',
         quantity: 1
       }],
-        success_url: products_url,
-        cancel_url: products_url
+      success_url: products_url,
+      cancel_url: products_url
     )
 
-  order.update(checkout_session_id: session.id)
-  redirect_to new_order_payment_path(order)
+    order.update(checkout_session_id: session.id)
+    redirect_to new_order_payment_path(order)
   end
 
   private
