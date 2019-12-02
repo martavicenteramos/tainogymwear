@@ -14,7 +14,16 @@ class ProductsController < ApplicationController
       @products = @products.map{|t| t}.uniq
     end
 
-
+    if params[:query].present?
+      @products = Product.all
+      @filter = params[:query]
+      # @filter[:colour].reject!(&:blank?).to_s
+      # @filter[:colour].map(&:to_i)
+      @products = Product.joins(:product_styles).where(:product_styles => {:style_id => @filter["style"].to_i }) if @filter["style"].present?
+      @products = @products.where('colour_id = ?', @filter[:colour]) if @filter["colour"].present?
+      @products = @products.where('product_type_id = ?', @filter[:type].to_i) if @filter["type"].present?
+      @products = @products.where('cut_id = ?', @filter['cut'].to_i) if @filter["cut"].present?
+    end
     # @user = current_user
     # if @user.products.present?
     #   @user_products = @usenu tai r.products
