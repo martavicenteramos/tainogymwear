@@ -3,12 +3,11 @@ var remove = document.getElementById("order-quantity-<%= @order_product.id %>");
 var totalPrice = document.getElementById("order-total-value");
 
 if (remove.innerHTML === "1") {
-  console.log("hello");
   document.getElementById("order-card-<%= @order_product.id %>").style.display = "none";
-  totalPrice.innerHTML = parseInt(totalPrice.textContent) - <%= @order_product.product.price %>;
+  totalPrice.innerHTML = Number(parseInt(totalPrice.textContent) - <%= @order_product.product.price %>).toFixed(2).replace('.', ',');
 } else {
   remove.innerHTML = parseInt(remove.textContent) - 1;
-  productPrice.innerHTML = parseInt(productPrice.textContent) - <%= @order_product.product.price %>;
-  totalPrice.innerHTML = parseInt(totalPrice.textContent) - <%= @order_product.product.price %>;
+  productPrice.innerHTML = Number(parseInt(productPrice.textContent) - <%= @order_product.product.price %>).toFixed(2).replace('.', ',');
+  totalPrice.innerHTML = Number(parseInt(totalPrice.textContent) - <%= @order_product.product.price %>).toFixed(2).replace('.', ',');
 }
 
