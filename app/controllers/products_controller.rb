@@ -26,7 +26,15 @@ class ProductsController < ApplicationController
   def show
     authorize @product
     @order_product = OrderProduct.new
+    @wishlist = Wishlist.new
   end
+
+# TENTATIVA DE ADICIONAR LISTA DE FAVORITOS
+  # def add_to_wishlist
+  #   @product = Product.find params[:product_id]
+  #   current_user.wishlists << @product
+  #   redirect_to wishlists_show_path, notice: "Added to Wishlist"
+  # end
 
   private
 

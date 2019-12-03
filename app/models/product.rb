@@ -2,6 +2,7 @@ class Product < ApplicationRecord
   belongs_to :product_type
   belongs_to :colour
   belongs_to :cut
+  belongs_to :wishlists
   has_many :product_styles
   has_many :styles, through: :product_styles
   has_many :pictures
