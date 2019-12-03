@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
     @wishlist = Wishlist.new
   end
 
-# TENTATIVA DE ADICIONAR LISTA DE FAVORITOS
+  # TENTATIVA DE ADICIONAR LISTA DE FAVORITOS
   # def add_to_wishlist
   #   @product = Product.find params[:product_id]
   #   current_user.wishlists << @product
