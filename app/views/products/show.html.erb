@@ -20,6 +20,17 @@
         <%= f.button :submit, "Add to cart", class: "blue-btn checkout-btn" %>
       <% end %>
       </div>
+
+      <%= simple_form_for @wishlist do |f| %>
+      <div class="form-inputs size-form">
+        <%= f.hidden_field :product_id, value: @product.id %>
+        <%= f.button :submit, "Add to wishlist", class: "pink-btn wishlist-btn" %>
+      <% end %>
+      </div>
+
+      <%#= link_to "Add to wishlist", wishlists_path, method: :create, class:"pink-btn" %>
+      <br>
     </div>
   </div>
 </div>
+

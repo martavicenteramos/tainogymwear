@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'wishlists/index'
+  get 'wishlists/show'
    devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
@@ -8,6 +10,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "questionaire", to: 'pages#questionaire'
   get "users", to: 'pages#users'
+  get "about_us", to: 'pages#about_us'
 
 
   get "profile", to: 'profiles#show', as: :profile
@@ -37,7 +40,7 @@ Rails.application.routes.draw do
 
   resources :user_product_types, only: [:new, :create]
 
-
+  resources :wishlists, only: [:new, :create, :index, :destroy]
   # resources :users, only: [:show] do
   #   resources :user_style
   #   resources :user_colour

@@ -15,8 +15,11 @@
     <%= render 'components/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
+    <%= render 'components/footer' %>
+
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+
     <script>
     function openNav() {
       document.getElementById("mySidebar").style.width = "250px";
