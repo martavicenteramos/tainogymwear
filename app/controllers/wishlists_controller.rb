@@ -12,7 +12,7 @@ class WishlistsController < ApplicationController
 
   def create
     @wishlist = Wishlist.create(wishlist_params)
-    @wishlist.product = Product.find(params["wishlist"]["product_id"])
+    @wishlist.product = Product.find(params["wishlist"]["product_id"].to_i)
     @wishlist.user = current_user
     authorize @wishlist
     if @wishlist.save
