@@ -12,6 +12,13 @@ class Product < ApplicationRecord
 
   monetize :price_cents
 
+  include AlgoliaSearch
+
+  algoliasearch do
+    # Use all default configuration
+    attribute :name
+  end
+
   include PgSearch::Model
   pg_search_scope :global_search,
     associated_against: {
