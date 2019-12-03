@@ -14,13 +14,14 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    @order_product = OrderProduct.new
 
     # @recomended shows products based on other user similarities
     if current_user.present?
       @recomended = Recommended.new.recomend_products(current_user)
       @user_best_match = Recommended.new.calculate_questions(current_user)
       @products = @user_best_match + @recomended + @products
-      @products = @products.map{|t| t}.uniq
+      @products = @products.map { |t| t }.uniq
     end
 
     if params[:filter].present?
@@ -69,8 +70,6 @@ class ProductsController < ApplicationController
   #   style = style.sort_by { |_k, v| v }.reverse
   #   return [colour, cut, type, style]
   # end
-
-
 
   def check_user_questionaire
     if session[:questionaire].nil?

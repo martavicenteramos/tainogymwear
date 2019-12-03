@@ -7,10 +7,38 @@
   height: 500px;
   width: 100%;
   background-size: cover;
+  z-index: 1;
+  position: relative;
   &:hover {
-
+    .quick-add {
+      display: flex;
+      background-color: white;
+      z-index: 2;
+      height: 25%;
+      position:absolute;
+      bottom: 0;
+      width:100%;
+      justify-content: space-around;
+      align-items: center;
+    }
   }
 }
+
+.quick-add {
+  display: none;
+}
+
+.size {
+  text-align: center;
+  align-items: center;
+  opacity: 1;
+  width: 40px;
+  height: 40px;
+  a {
+    text-decoration: none;
+  }
+}
+
 
 .card-trip h2 {
   font-size: 12px;
