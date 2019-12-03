@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   post "profile/update", to: 'profiles#update'
 
   resources :products, only: [:index, :show] do
+    collection do
+      get 'search'
+    end
     resources :order_products, only: [:create]
   end
 

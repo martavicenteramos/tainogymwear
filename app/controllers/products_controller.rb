@@ -1,7 +1,11 @@
 class ProductsController < ApplicationController
   before_action :check_user_questionaire, only: [:index]
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :search]
   before_action :set_product, only: [:show]
+
+  def search
+    skip_authorization
+  end
 
   def index
     @products = Product.all
