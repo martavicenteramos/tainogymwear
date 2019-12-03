@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :show] do
     collection do
       get 'search'
+      get 'search_results'
     end
     resources :order_products, only: [:create]
   end

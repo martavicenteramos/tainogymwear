@@ -7,6 +7,11 @@ class ProductsController < ApplicationController
     skip_authorization
   end
 
+  def search_results
+    skip_authorization
+    @products = Product.where(id: params[:ids].split(','))
+  end
+
   def index
     @products = Product.all
 
@@ -33,7 +38,7 @@ class ProductsController < ApplicationController
     @wishlist = Wishlist.new
   end
 
-# TENTATIVA DE ADICIONAR LISTA DE FAVORITOS
+  # TENTATIVA DE ADICIONAR LISTA DE FAVORITOS
   # def add_to_wishlist
   #   @product = Product.find params[:product_id]
   #   current_user.wishlists << @product
