@@ -2,8 +2,8 @@ var add = document.getElementById("order-quantity-<%= @order_product.id %>");
 add.innerHTML = parseInt(add.textContent) + 1;
 
 var productPrice = document.getElementById("order-price-<%= @order_product.id %>");
-productPrice.innerHTML = parseInt(productPrice.textContent) + <%= @order_product.product.price %>;
+productPrice.innerHTML = Number(parseInt(productPrice.textContent) + <%= @order_product.product.price %>).toFixed(2).replace('.', ',');
 
 var totalPrice = document.getElementById("order-total-value");
-totalPrice.innerHTML = parseInt(totalPrice.textContent) + <%= @order_product.product.price %>;
+totalPrice.innerHTML = Number(parseFloat(totalPrice.textContent) + <%= @order_product.product.price %>).toFixed(2).replace('.', ',');
 
