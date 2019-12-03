@@ -1,5 +1,5 @@
 class WishlistsController < ApplicationController
-  # before_action :set_product, only: :create
+  # before_action :set_product, only: :destroy
 
   def index
     @wishlists = policy_scope(Wishlist).where(user_id: current_user.id)
@@ -16,13 +16,20 @@ class WishlistsController < ApplicationController
     @wishlist.user = current_user
     authorize @wishlist
     if @wishlist.save
-      redirect_to wishlists_path, notice: 'Your item was added to Wishlist.'
+      redirect_to wishlists_index_path, notice: 'Your item was added to Wishlist.'
     else
       redirect_to "/", notice: 'There is a problem in add this item to your Wishlist'
     end
   end
 
   def show
+  end
+
+  def destroy
+    @wishlist = Wishlist.find(params[:id])
+    authorize @wishlist
+    @wishlist.destroy
+    redirect_to wishlists_index_path, notice: 'The item was removed from your Wishlist'
   end
 
   private
