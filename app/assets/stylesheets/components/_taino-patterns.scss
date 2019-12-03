@@ -47,8 +47,8 @@ h5 {
 p {
   color: $taino-mediumgray;
   font-style: $headers-font;
-  font-style: bold;
-  font-size: 12px;
+  // font-style: bold;
+  font-size: 15px;
   letter-spacing: 3px;
 }
 
@@ -98,4 +98,8 @@ p {
 //   color: $taino-blue;
 //   opacity: .7
 // }
+
+.border-table {
+  border-bottom: 0.5px solid $taino-lightgray;
+}
 

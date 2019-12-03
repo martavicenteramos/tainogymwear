@@ -52,6 +52,10 @@ GEM
       msgpack (~> 1.0)
     builder (3.2.3)
     byebug (11.0.1)
+    carrierwave (1.3.1)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     cloudinary (1.9.1)
       aws_cf_signer
       rest-client
@@ -134,6 +138,9 @@ GEM
     ntlm-http (0.1.1)
     orm_adapter (0.5.0)
     pg (0.21.0)
+    pg_search (2.3.0)
+      activerecord (>= 4.2)
+      activesupport (>= 4.2)
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
@@ -246,6 +253,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootsnap
+  carrierwave (~> 1.2)
   cloudinary (~> 1.9.1)
   devise
   dotenv-rails
@@ -256,6 +264,7 @@ DEPENDENCIES
   mechanize
   money-rails
   pg (~> 0.21)
+  pg_search
   pry-byebug
   pry-rails
   puma
