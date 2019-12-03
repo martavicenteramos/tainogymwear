@@ -1,28 +1,33 @@
-<h1 class="form-title">My Wishlist</h1>
-<br>
+<div class="banner-cart" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1538157245064-badfdabb7142?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);"></div>
+<h1 class="form-title margin35tb">MY WISHLIST</h1>
+
 <div class="container">
-  <% if @wishlists == 0 %>
-    <h2>Your wishlist is still empty!</h2>
-  <% else %>
   <div class="mt-3">
     <% @wishlists.each do |wishlist| %>
-      <div class="mini-card-product">
-        <div class="mini-card-image">
-          <%= link_to product_path(wishlist.product.id) do%>
-          <div class="mini-card-image">
-            <img src="<%= wishlist.product.pictures.first.url %>" />
+      <div class="row w-100">
+        <div class="mini-card-product">
+          <div class="col-lg-8 d-flex">
+            <%= link_to product_path(wishlist.product.id) do%>
+            <div class="mini-card-image">
+              <%= cl_image_tag wishlist.product.pictures.first.url %>
+            </div>
+            <% end %>
+            <div>
+              <h2><%= wishlist.product.name %></h2>
+              <h5><%= wishlist.product.product_type.name %></h5>
+              <h5><%= wishlist.product.colour.name %></h5>
+            </div>
           </div>
-          <% end %>
+          <div class="cart_table col-lg-2">
+            <h5 class="mini-card-price"><%= wishlist.product.price %></span> €</h5>
+          </div>
+          <div class="cart_table col-lg-2">
+            <%= link_to "Remove", wishlist_path(wishlist), method: :delete, class:"blue-btn" %>
+          </div>
 
         </div>
-        <div class="mini-card-product-infos">
-          <h2><%= wishlist.product.name %></h2>
-          <h5 class="mini-card-price"><%= wishlist.product.price %> €</h5>
-        </div>
       </div>
-    <% end %>
-    <% end %>
-  </div>
+        <% end %>
 </div>
 
 

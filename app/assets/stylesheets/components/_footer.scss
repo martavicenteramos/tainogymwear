@@ -1,13 +1,36 @@
+// >>>>>>>>>> THIS CONTENT IS HERE TO FIX THE FOOTER TO THE BOTTOM <<<<<<<<<<<<<
+
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 350px;
+  min-height: 100%;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
 .footer {
   background: rgba(240, 240, 240, .7);
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 30hv;
   color: rgba(0,0,0,0.3);
   box-shadow: 0 0 10px rgba(0,0,0,0.15);
-  padding: 45px 0px;
-  margin-top: 15px;
+  padding: 30px 45px 20px 45px;
+  margin-top: 25px;
+  height:350px;
+  width:100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
 
   h2 {
     color: $black;
