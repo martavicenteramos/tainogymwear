@@ -1,4 +1,8 @@
 class OrdersController < ApplicationController
+  def index
+    @orders = policy_scope(Order).where(user_id: current_user.id).where(status: "paid").order(created_at: :desc)
+  end
+
   def cart
     @order = current_user.find_or_create_pending_order
     @order_id = @order.id
@@ -23,25 +27,20 @@ class OrdersController < ApplicationController
   def review_information
     @order = Order.find(params[:order_id].to_i)
     authorize @order
-  end
-
-  def checkout
-    order = Order.find(params[:order].to_i)
-    authorize order
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
         name: "Your Taíno order!",
-        amount: order.total_value_cents,
+        amount: @order.total_value_cents,
         currency: 'eur',
         quantity: 1
       }],
-      success_url: products_url,
+      success_url: orders_url,
       cancel_url: products_url
     )
 
-    order.update(checkout_session_id: session.id)
-    redirect_to new_order_payment_path(order)
+    @order.update(checkout_session_id: session.id)
+    @order.update(date: Date.today)
   end
 
   private

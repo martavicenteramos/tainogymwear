@@ -1,7 +1,8 @@
 <div class="banner-cart" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1521805103424-d8f8430e8933?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80);"></div>
 <div class="container">
   <% if @order.total_value == 0 %>
-    <h2>Your cart is empty!</h2>
+    <h2 class="mt-3">Your cart is empty!</h2>
+    <%= link_to "Return to shop.", products_path %>
   <% else %>
     <div class="mt-3">
       <% @order.order_products.each do |order_product| %>
@@ -36,10 +37,7 @@
           </div>
         </div>
       </div>
-    </div>
         <% end %>
-
-    <div class="container">
       <div class="row w-100">
         <div class="cart-subtotal w-100">
           <div class="col-lg-8"></div>
@@ -49,8 +47,8 @@
       </div>
       <div class="row">
         <div class="col-lg-8"></div>
-        <%= link_to "checkout", edit_order_path(@order), class: "blue-btn checkout-btn col-lg-4 mt-3" %>
+        <%= link_to "checkout", edit_order_path(@order), class: "blue-btn checkout-btn col-lg-4 mt-3 mb-3" %>
       </div>
-    </div>
   <% end %>
+  </div>
 </div>

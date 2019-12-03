@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   get "cart", to: "orders#cart"
 
-  resources :orders, only: [:edit, :update] do
+  resources :orders, only: [:edit, :update, :index] do
     get "review_information", to: "orders#review_information"
   end
 
