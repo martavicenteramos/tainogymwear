@@ -1,0 +1,40 @@
+<div>
+  <h3 class="form-title margin35tb"> Hello, <%= current_user.first_name %> <%= current_user.last_name %>! </h3>
+</div>
+<div class="user-information">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm user-box">
+        <div><%= image_tag "MARTA.png", class: "avatar-huge", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %></div>
+      </div>
+      <div class="col-sm user-box">
+        <h2>NAME:</h2>
+        <br>
+        <h5><%= current_user.first_name %> <%= current_user.last_name %></h5>
+      </div>
+      <div class="col-sm user-box">
+        <h2>E-MAIL:</h2>
+        <br>
+        <h5><%= current_user.email %></h5>
+      </div>
+      <div class="col-sm user-box">
+        <span class="form-actions">
+        <%= link_to 'Edit', edit_user_registration_path, class: 'blue-btn'%>
+        </span>
+      </div>
+    </div>
+    <h3 class="form-title margin35tb"> MY PREFERENCES </h3>
+
+
+<div class="user-preferences">
+
+  <div class="form-inputs basic-form">
+    <%= simple_form_for current_user do |f| %>
+      <%= f.association :colours, as: :check_boxes, collection: Colour.all %>
+      <%= f.association :styles, as: :check_boxes, collection: Style.all %>
+      <%= f.association :product_types, as: :check_boxes, collection: ProductType.all %>
+      <%= f.input :cut_id, collection: Cut.all %>
+      <%= f.submit 'Save user', class: 'blue-btn' %>
+    <% end %>
+  </div>
+</div>

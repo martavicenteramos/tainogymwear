@@ -107,3 +107,19 @@ p {
   border-bottom: 0.5px solid $taino-lightgray;
 }
 
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>> ALERTS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+.alert-info {
+  background-color: rgb(78, 181, 191);
+  border-color: $taino-blue;
+  color: $white;
+  font-style: $headers-font;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  text-align: center;
+}
+

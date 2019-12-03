@@ -12,10 +12,6 @@ Rails.application.routes.draw do
   get "users", to: 'pages#users'
   get "about_us", to: 'pages#about_us'
 
-
-  get "profile", to: 'profiles#show', as: :profile
-  post "profile/update", to: 'profiles#update'
-
   resources :products, only: [:index, :show] do
     collection do
       get 'search'
@@ -42,6 +38,9 @@ Rails.application.routes.draw do
       patch :remove
     end
   end
+
+  resources :users, only: [:update]
+  get '/profile', to: "users#show"
 
   resources :user_colours, only: [:new, :create]
 
