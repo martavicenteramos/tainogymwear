@@ -18,7 +18,7 @@ class WishlistsController < ApplicationController
     if @wishlist.save
       redirect_to wishlists_index_path, notice: 'Your item was added to Wishlist.'
     else
-      redirect_to "/", notice: 'There is a problem in add this item to your Wishlist'
+      redirect_to wishlists_index_path, notice: 'This item is already in your wishlist'
     end
   end
 
