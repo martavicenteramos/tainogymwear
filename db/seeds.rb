@@ -112,7 +112,7 @@ class DoYouEvenWomenScraper
   end
 end
 
-Wishlist.destroy_all
+
 OrderProduct.destroy_all
 Order.destroy_all
 ProductStyle.destroy_all
