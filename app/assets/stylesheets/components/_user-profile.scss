@@ -29,6 +29,19 @@
   flex-direction: row;
   justify-content: space-between;
   margin: 0px 10%;
+  align-items: center;
+
+  .row {
+    align-items: center;
+  }
+}
+
+.user-box {
+  padding: 20px;
+  margin: 0px 15px;
+  width: 40vw;
+  align-items: center;
+  text-align: center;
 }
 
 .edit-user {
