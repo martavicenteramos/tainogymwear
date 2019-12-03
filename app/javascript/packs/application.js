@@ -1,14 +1,27 @@
+import algoliasearch from "algoliasearch";
 import "bootstrap";
 
-function openNav() {
-  document.getElementById("mySidebar").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-}
+var client = algoliasearch('IBVWT5Z8Y5', '92014f06c232528778ca6dea55cfb907');
+var index = client.initIndex('Product');
 
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const searchBar = document.getElementById('algolia-search');
+
+  searchBar.addEventListener("keyup", () => {
+    index.search({
+      query: searchBar.value,
+
+    }).then(({ hits }) => {
+      const ids = hits.map(product => product.objectID);
+
+      Rails.ajax({
+        url: `/products/search_results?ids=${ids.join(',')}`,
+        type: 'GET',
+      })
+      //window.location.reload(`/products/`)
+    });
+  });
+});
 
 // document.addEventListener("DOMContentLoaded", function(){
 //   const addButtons = document.querySelectorAll(".btn-counter-add");
@@ -20,4 +33,3 @@ function closeNav() {
 //     });
 //   });
 // });
-

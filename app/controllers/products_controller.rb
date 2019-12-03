@@ -7,6 +7,11 @@ class ProductsController < ApplicationController
     skip_authorization
   end
 
+  def search_results
+    skip_authorization
+    @products = Product.where(id: params[:ids].split(','))
+  end
+
   def index
     @products = Product.all
 
