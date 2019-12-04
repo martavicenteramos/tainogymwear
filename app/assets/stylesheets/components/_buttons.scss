@@ -145,3 +145,30 @@
 .wishlist-btn {
   font-size: 12px;
 }
+
+.small-btn {
+  background-color: $taino-newgray;
+  color: $white;
+  font-family: $headers-font;
+  font-weight: 500;
+  opacity: .6;
+  letter-spacing: 5px;
+  padding: 2px 18px;
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 7px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+  margin-top: 10px;
+}
+
+.small-btn:hover {
+  opacity: .3;
+  text-decoration: none;
+}
+
+.btn-center {
+  align-items: center;
+}
+
