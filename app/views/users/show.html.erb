@@ -1,5 +1,5 @@
-<div>
-  <h3 class="form-title margin35tb"> Hello, <%= current_user.first_name %> <%= current_user.last_name %>! </h3>
+<div class="user-title">
+  <h3 class="form-title"> Hello, <%= current_user.first_name %> <%= current_user.last_name %>! </h3>
 </div>
 <div class="user-information">
   <div class="container">
@@ -19,13 +19,14 @@
       </div>
       <div class="col-sm user-box">
         <span class="form-actions">
-        <%= link_to 'Edit', edit_user_registration_path, class: 'blue-btn'%>
+          <%= link_to 'Edit', edit_user_registration_path, class: 'blue-btn'%>
         </span>
       </div>
     </div>
-    <h3 class="form-title margin35tb"> MY PREFERENCES </h3>
   </div>
 </div>
+
+<h3 class="form-title margin30b"> MY PREFERENCES </h3>
 
 <div class="user-preferences">
   <div class="form-inputs basic-form">
