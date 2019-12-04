@@ -131,3 +131,16 @@ p {
   animation: autoHide 0s ease-in 4s forwards;
 }
 
+.alert-error{
+  background-color: red;
+  border-color: $taino-blue;
+  color: $white;
+  font-style: $headers-font;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  text-align: center;
+  animation: autoHide 0s ease-in 4s forwards;
+}
