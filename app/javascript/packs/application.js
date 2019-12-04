@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
 const sizes = document.querySelectorAll('.size');
 const loadingSign = '<div class="spinner-border" role="status" style="width:20px; height:20px;"></div>';
 const check = '<i class="fas fa-check"></i>';
@@ -43,6 +44,7 @@ Array.from(sizes).forEach(size => {
     size.innerHTML = loadingSign;
   });
 });
+
 
 //rafas
 //application_id: 'IBVWT5Z8Y5',
