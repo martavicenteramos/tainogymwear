@@ -28,7 +28,6 @@
 </div>
 
 <div class="user-preferences">
-
   <div class="form-inputs basic-form">
     <%= simple_form_for current_user do |f| %>
       <%= f.association :colours, as: :check_boxes, collection: Colour.all %>
