@@ -33,24 +33,25 @@
   <div class="cards col-lg-10">
     <% @products.each do |prod| %>
       <div class="card-trip">
-        <%= link_to product_path(prod) do%>
-          <div class="img" style="background-image: url(<%= cl_image_path prod.pictures.first.url%>)">
-            <div>
-              <div class="quick-add">
-                <%= link_to 'XS', product_order_products_path(prod, "order_product"=>{"size"=>"XS"}), method: :post, remote: true, class: "size" %>
-                <%= link_to 'S', product_order_products_path(prod, "order_product"=>{"size"=>"S"}), method: :post, remote: true, class: "size" %>
-                <%= link_to 'M', product_order_products_path(prod, "order_product"=>{"size"=>"M"}), method: :post, remote: true, class: "size" %>
-                <%= link_to 'L', product_order_products_path(prod, "order_product"=>{"size"=>"L"}), method: :post, remote: true, class: "size" %>
-              </div>
+        <div class="card-link">
+          <%= link_to product_path(prod) do %>
+            <div class="img" style="background-image: url(<%= cl_image_path prod.pictures.first.url%>)">
             </div>
+          <% end %>
+
+          <div class="quick-add">
+            <%= link_to 'XS', product_order_products_path(prod, "order_product"=>{"size"=>"XS"}), method: :post, remote: true, class: "size", id: 1 %>
+            <%= link_to 'S', product_order_products_path(prod, "order_product"=>{"size"=>"S"}), method: :post, remote: true, class: "size", id: 2 %>
+            <%= link_to 'M', product_order_products_path(prod, "order_product"=>{"size"=>"M"}), method: :post, remote: true, class: "size", id: 3 %>
+            <%= link_to 'L', product_order_products_path(prod, "order_product"=>{"size"=>"L"}), method: :post, remote: true, class: "size", id: 4 %>
           </div>
-          <div class="img-2" style="display:none; background-image: url(<%= cl_image_path prod.pictures.first.url%>)"></div>
-            <div class="card-trip-infos">
-                <h5><strong><%= prod.name %></strong></h5>
-                <p><%= prod.price %></p>
-                <p><%= prod.colour.name %></p>
-            </div>
-        <% end %>
+        </div>
+
+        <div class="card-trip-infos">
+          <h5><strong><%= prod.name %></strong></h5>
+          <p><%= prod.price %></p>
+          <p><%= prod.colour.name %></p>
+        </div>
       </div>
     <% end %>
   </div>
