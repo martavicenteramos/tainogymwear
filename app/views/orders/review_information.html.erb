@@ -1,39 +1,85 @@
-  <div class="container">
-  <div class="row py-4">
-    <div class="col-md-3"></div>
-    <div class="col">
-      <h1>Review your information:ssss</h1>
-      <br>
-      <span>
-        <h2>NAME:</h2>
-        <h5><%= current_user.first_name %> <%= current_user.last_name %></h5>
-      </span>
-      <br>
-      <span>
-        <h2>E-MAIL:</h2>
-        <h5><%= current_user.email %></h5>
-      </span>
-      <br>
-      <span>
-        <h2>ADDRESS:</h2>
-        <h5><%= @order.address %></h5>
-      </span>
-      <br>
-      <h2>Checkout summary:</h2>
-      <p>Purchase <strong>for <strong><%= humanized_money_with_symbol @order.calculate_total %></strong></p>
+<div class="banner-cart" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80);"></div>
+<h1 class="form-title margin35tb">Review your information</h1>
 
-      <button id="pay" class="blue-btn checkout-btn">Pay</button>
-      <script src="https://js.stripe.com/v3/"></script>
-      <script>
-        const paymentButton = document.getElementById('pay');
-        paymentButton.addEventListener('click', () => {
-          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-          stripe.redirectToCheckout({
-            sessionId: '<%= @order.checkout_session_id %>'
-          });
-        });
-      </script>
+<div class="summary">
+  <div class="user-information no-border pad15tb">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm user-box">
+          <h2>NAME:</h2>
+          <h5><%= current_user.first_name %> <%= current_user.last_name %></h5>
+        </div>
+        <div class="col-sm user-box">
+          <h2>E-MAIL:</h2>
+          <h5><%= current_user.email %></h5>
+        </div>
+        <div class="col-sm user-box">
+          <h2>ADDRESS:</h2>
+          <h5><%= @order.address %></h5>
+        </div>
+        <div class="col-sm user-box">
+          <%= link_to 'Edit address', edit_order_path(@order), class: 'blue-btn gray-back reduce-btn'%>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="container">
+    <h1 class="form-title margin35tb">Checkout summary:</h1>
+    <div class="accordion" id="accordionExample">
+      <div class="row my-3">
+        <div class="d-flex w-100 border-table d-flex align-items-center">
+          <h5 class="col-lg-4" data-toggle="collapse" data-target="#collapse<%= @order.id %>" aria-expanded="true" aria-controls="collapseOne">PRODUCTS LIST <i class="fas fa-arrow-alt-circle-down"></i></h5>
+        </div>
+      </div>
+      <div class="row">
+        <div id="collapse<%= @order.id %>" class="collapse w-100" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="w-100">
+            <% @order.order_products.each do |order_product| %>
+            <div class="mini-card-product" id="order-card-<%= order_product.id %>">
+              <div class="col-lg-8 d-flex">
+                <div class="mini-card-image">
+                  <%= cl_image_tag order_product.product.pictures.first.url %>
+                </div>
+                <div>
+                  <h2><%= order_product.product.name %></h2>
+                 <h5>SIZE:<%= order_product.size %></h5>
+                  <h5>PRICE(uni): <%= order_product.product.price %></h5>
+                  <h5>Quantity: <%= order_product.quantity %></h5>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <h5 class="mini-card-price"><span id="order-price-<%= order_product.id %>"><%= order_product.quantity * order_product.product.price %></span> €</h5>
+              </div>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class= "purchase-summary">
+    <div class="pad10rl"><h5>Purchase of <strong><%= humanized_money_with_symbol @order.total_value %></strong></h5></div>
+    <div class="pad10rl"><button id="pay" class="blue-btn review-btn btn-center">Pay</button></div>
   </div>
 </div>
 <br>
+<br>
+
+<!--         <div class="col-sm user-box">
+          <span class="form-actions">
+            <#%= link_to 'Edit', edit_user_registration_path, class: 'blue-btn reduce-font-btn'%>
+          </span>
+        </div> -->
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+  const paymentButton = document.getElementById('pay');
+  paymentButton.addEventListener('click', () => {
+    const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+    stripe.redirectToCheckout({
+      sessionId: '<%= @order.checkout_session_id %>'
+    });
+  });
+</script>
+
+

@@ -19,12 +19,18 @@
   input[type=text] {
     font-size: 13px;
     font-style: inherit;
+    text-transform: uppercase;
   }
 
   input[type=email] {
     font-size: 13px;
     font-style: inherit;
   }
+  input[type=address] {
+    font-size: 13px;
+    font-style: inherit;
+  }
+
 }
 
 .form-title {

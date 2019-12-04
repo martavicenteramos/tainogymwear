@@ -59,6 +59,17 @@
   text-decoration: none;
 }
 
+.review-btn {
+  text-align: center;
+  padding: 10px 20px;
+  margin: 0 auto;
+}
+
+.review-btn:hover {
+  opacity: .5;
+  text-decoration: none;
+}
+
 .btn-counter-add {
   background-color: $taino-lightgray;
   color: $taino-newgray;
@@ -193,4 +204,9 @@
 .reduce-font-btn {
   font-size: 12px;
   padding: 8px 18px;
+}
+
+.reduce-btn {
+  font-size: 11px;
+  padding: 8px 8px;
 }
