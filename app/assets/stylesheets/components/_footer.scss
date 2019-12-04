@@ -37,19 +37,40 @@ html {
     opacity: .9;
     font-size: 15px;
   }
+
+  .links {
+    text-decoration: none;
+    list-style: none;
+    margin-bottom: 0px;
+    // padding-left: 90px;
+  }
+
+  ul {
+    padding-inline-start: 0px;
+  }
+
+  li:hover {
+    opacity: .6;
+    color: $taino-blue;
+  }
 }
 
 .footer-logo {
   width: 130px;
 }
 
-.footer .container-fluid .footer-elements {
+.footer .container .footer-elements {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  padding-top: 45px;;
   align-items: flex-start;
-  margin-left: 12%;
+}
+
+.footer .container .footer-image {
+  margin-bottom: 40px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .contacts {
@@ -58,17 +79,11 @@ html {
   padding-left: 0px;
 }
 
-.links {
-  text-decoration: none;
-  list-style: none;
-  margin-bottom: 0px;
-  padding-left: 0px;
-
-  li:hover {
-    opacity: .6;
-    color: $taino-blue;
-  }
+.footer-box {
+  display: flex;
+  justify-content: center;
 }
+
 
 .links-text {
   line-height: 30px;
@@ -98,6 +113,42 @@ html {
   i:hover {
     opacity: .6;
     color: $taino-blue;
+  }
+}
+
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .footer {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .footer {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .footer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .footer {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .footer {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
