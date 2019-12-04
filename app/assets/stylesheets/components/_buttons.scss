@@ -10,6 +10,10 @@
   border-radius: 7px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   text-align: center;
+
+  link {
+    color: $white;
+  }
 }
 
 .gray-btn:hover {
@@ -29,8 +33,12 @@
   border-radius: 7px;
   margin: 0 auto;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  opacity: .85;
+  opacity: .7;
   text-align: center;
+
+  link {
+    color: $white;
+  }
 }
 
 .blue-btn:hover {
@@ -151,7 +159,7 @@
   color: $white;
   font-family: $headers-font;
   font-weight: 500;
-  opacity: .6;
+  opacity: .7;
   letter-spacing: 5px;
   padding: 2px 18px;
   font-size: 12px;
@@ -172,3 +180,17 @@
   align-items: center;
 }
 
+.blue-back {
+  background-color: $taino-blue;
+  margin-top: 0px;
+}
+
+.gray-back {
+  background-color: $taino-newgray;
+  opacity: .6;
+}
+
+.reduce-font-btn {
+  font-size: 12px;
+  padding: 8px 18px;
+}

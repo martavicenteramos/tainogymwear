@@ -1,5 +1,4 @@
-
-
+<!-- Playing with the sidebar -->
 <!-- <div id="mySidebar" class="sidebar mt-5">
   <a href="#">About</a>
   <a href="#">Services</a>
@@ -26,7 +25,7 @@
         <%= f.input :type, as: :select, required: false, collection: ProductType.all,value_method: :name %>
         <%= f.input :style, as: :check_boxes, include_hidden: false, required: false, collection: Style.all, value_method: :name %>
         <%= f.input :colour, as: :check_boxes, include_hidden: false, required: false, collection: Colour.all, value_method: :name %>
-        <%= f.submit :SEARCH, class: "small-btn btn-center" %>
+        <%= f.submit :SEARCH, class: "small-btn btn-center gray-back" %>
       <% end %>
     </div>
   </div>
@@ -45,11 +44,11 @@
             </div>
           <% end %>
 
-          <div class="quick-add">
-            <%= link_to 'XS', product_order_products_path(prod, "order_product"=>{"size"=>"XS"}), method: :post, remote: true, class: "size", id: 1 %>
-            <%= link_to 'S', product_order_products_path(prod, "order_product"=>{"size"=>"S"}), method: :post, remote: true, class: "size", id: 2 %>
-            <%= link_to 'M', product_order_products_path(prod, "order_product"=>{"size"=>"M"}), method: :post, remote: true, class: "size", id: 3 %>
-            <%= link_to 'L', product_order_products_path(prod, "order_product"=>{"size"=>"L"}), method: :post, remote: true, class: "size", id: 4 %>
+          <div class="quick-add" id="<%= prod.id %>">
+            <%= link_to 'XS', product_order_products_path(prod, "order_product"=>{"size"=>"XS"}), method: :post, remote: true, class: "size", id: "#{prod.id}-XS" %>
+            <%= link_to 'S', product_order_products_path(prod, "order_product"=>{"size"=>"S"}), method: :post, remote: true, class: "size", id: "#{prod.id}-S" %>
+            <%= link_to 'M', product_order_products_path(prod, "order_product"=>{"size"=>"M"}), method: :post, remote: true, class: "size", id: "#{prod.id}-M" %>
+            <%= link_to 'L', product_order_products_path(prod, "order_product"=>{"size"=>"L"}), method: :post, remote: true, class: "size", id: "#{prod.id}-L" %>
           </div>
         </div>
 
