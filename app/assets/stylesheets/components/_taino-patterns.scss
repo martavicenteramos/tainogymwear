@@ -121,26 +121,27 @@ p {
 
 
 .alert-info {
-  background-color: rgba(7, 175, 191, .97);
-  border: none;
+  background-color: rgb(7, 175, 191);
+  border-color: rgba(7, 175, 191, .7);
   color: $white;
   font-style: $headers-font;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 5px;
   text-transform: uppercase;
-  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  box-shadow: 0 0 10px rgba(50,50,50,0.35);
   text-align: center;
 }
 
-.alert-warning{
-  background-color: rgba(214, 111, 169, .97);
+.alert-warning {
+  background-color: rgb(209, 87, 154);
+  border-color: rgba(209, 87, 154, .7);
   color: $white;
   font-style: $headers-font;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 5px;
   text-transform: uppercase;
-  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  box-shadow: 0 0 10px rgba(50,50,50,0.35);
   text-align: center;
 }
