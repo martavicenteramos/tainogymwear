@@ -93,6 +93,9 @@ p {
   margin: 30px 0px;
 }
 
+.margin40tb {
+  margin: 40px 0px;
+}
 .margin10lr {
   margin: 0px 10px;
 }
@@ -128,6 +131,7 @@ p {
   text-transform: uppercase;
   box-shadow: 0 0 10px rgba(0,0,0,0.15);
   text-align: center;
+  opacity: .9;
   animation: autoHide 0s ease-in 4s forwards;
 }
 

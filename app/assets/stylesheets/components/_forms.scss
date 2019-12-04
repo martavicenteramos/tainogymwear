@@ -133,12 +133,12 @@
   color: $taino-darkgray;
   font-style: $headers-font;
   border-radius: 5px;
-  padding: 15px;
+  padding: 25px;
   text-transform: uppercase;
   letter-spacing: 4px;
   line-height: 30px;
   box-shadow: 0 0 10px rgba(0,0,0,0.12);
-  margin: 0px 25% 30px 25%;
+  margin: 0px 10% 30px 10%;
   border-color: $taino-lightgray;
   font-size: 12px;
   }
@@ -147,7 +147,40 @@
     font-size: 13px;
     font-style: inherit;
     color: $taino-pink;
-    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .col-sm.question {
+    padding: 10px 30px;
+    width: 30%;
+  }
+
+  .col-sm.question4 {
+    padding: 10px 30px;
+    width: 30%;
+    position: relative;
+    top: -5px;
+    color: $taino-pink;
+    font-size: 13px;
+    margin: 0px 0px 15px 0px;
+
+    .form-control {
+      font-size: 13px;
+      font-style: inherit;
+    }
+  }
+
+  .preferences-btn {
+    margin: 15px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .questions {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
   }
 }
 
