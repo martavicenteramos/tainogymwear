@@ -20,7 +20,7 @@
       </span>
       <br>
       <h2>Checkout summary:</h2>
-      <p>Purchase of <strong>for <strong><%= humanized_money_with_symbol @order.calculate_total %></strong></p>
+      <p>Purchase <strong>for <strong><%= humanized_money_with_symbol @order.calculate_total %></strong></p>
 
       <button id="pay" class="blue-btn checkout-btn">Pay</button>
       <script src="https://js.stripe.com/v3/"></script>
