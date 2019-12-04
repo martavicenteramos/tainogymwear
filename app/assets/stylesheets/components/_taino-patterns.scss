@@ -63,7 +63,24 @@ p {
   margin-top: 25px;
 }
 
+.summary {
+  align-items: center;
+}
 
+.purchase-summary {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  h5 {
+  font-size: 16px;
+  }
+}
+
+.align-right {
+  text-align: right;
+}
 // >>>>>>>>>>>>>>>>>> MARGINS & PADDINGS <<<<<<<<<<<<<<<<<<<
 
 .pad15tb {
@@ -74,12 +91,20 @@ p {
   padding: 15px;
 }
 
+.pad10rl {
+  padding: 0px 10px;
+}
+
 .italic {
   font-style: italic;
 }
 
 .margin10l {
   margin-left: 10px;
+}
+
+.margin20t {
+  margin-top: 20px;
 }
 
 .margin45t {
@@ -96,6 +121,11 @@ p {
 .margin40tb {
   margin: 40px 0px;
 }
+
+.margin10tb {
+  margin: 10px 0px;
+}
+
 .margin10lr {
   margin: 0px 10px;
 }
@@ -104,6 +134,9 @@ p {
   margin:0 auto;
 }
 
+.line-narrow {
+  height: 10px;
+}
 
 // >>>>>>>>>>>>>>>>>> LINKS E HOVERS <<<<<<<<<<<<<<<<<<<
 
@@ -145,3 +178,10 @@ p {
   box-shadow: 0 0 10px rgba(50,50,50,0.35);
   text-align: center;
 }
+
+
+.summary.container {
+  display: flex;
+  flex-direction: column;
+}
+
