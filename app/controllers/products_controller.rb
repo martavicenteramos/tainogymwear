@@ -28,6 +28,10 @@ class ProductsController < ApplicationController
       @products = Product.all
       @filter = Filter.new(params[:filter])
       @products = @filter.filter(@products)
+      if @products.first.nil?
+        flash[:error] = "Sorry... We couldnt find the products you searched for..."
+        @products = Product.all
+      end
     else
       @filter = Filter.new
     end
