@@ -1,1 +1,25 @@
-alert('HI');
+// Very buggy, only works for one product at a time
+var selected = document.getElementById("<%= @order_product.product.id %>-<%=@order_product.size%>");
+var size = selected.innerHTML
+
+loadingSign = '<div class="spinner-border" role="status" style="width:20px; height:20px;"></div>'
+selected.innerHTML = loadingSign;
+
+setTimeout(checkMark, 2000)
+function checkMark() {
+  var check = '<i class="fas fa-check"></i>'
+  selected.innerHTML = check
+}
+
+setTimeout(remove, 5000)
+function remove() {
+  selected.innerHTML = size
+}
+
+
+var div = document.getElementById("<%= @order_product.product.id %>")
+div.addEventListener('mouseleave', (event) => {
+  selected.innerHTML = size;
+});
+
+
