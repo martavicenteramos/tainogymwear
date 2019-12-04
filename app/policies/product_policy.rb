@@ -12,4 +12,12 @@ class ProductPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def search?
+    true
+  end
+
+  def search_results?
+    true
+  end
 end
