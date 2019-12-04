@@ -56,8 +56,10 @@
 
 // <<<<<<<<<<<<< FORM FOR PREFERENCES>>>>>>>>>>>>>>>>>>>>>>>>
 
-.new-form {
-  background-color: $taino-backgray;
+.prod-index-form {
+  // background-color: $taino-backgray;
+  // border-color: $taino-lightgray;
+  // box-shadow: 0 0 10px rgba(0,0,0,0.12);
   color: $taino-darkgray;
   font-style: $headers-font;
   border-radius: 5px;
@@ -65,28 +67,28 @@
   text-transform: uppercase;
   letter-spacing: 4px;
   line-height: 30px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.12);
-  margin: 0px 30% 30px 30%;
-  border-color: $taino-lightgray;
+  margin: 5px;
   font-size: 12px;
+
+  h4 {
+    font-size: 13px;
+    text-align: left;
+    line-height: 20px;
+    font-weight: bold;
+  }
 
   .form-group.string {
     padding-bottom: 1px;
   }
 
-  input[type=email] {
-    font-size: 13px;
-    font-style: inherit;
+  label {
+    text-color: $taino-pink;
   }
 
   input[type=text] {
     font-size: 13px;
     font-style: inherit;
-  }
-
-  input[type=email] {
-    font-size: 13px;
-    font-style: inherit;
+    color: $taino-pink
   }
 }
 
