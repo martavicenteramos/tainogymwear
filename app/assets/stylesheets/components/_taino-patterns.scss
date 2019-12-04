@@ -121,7 +121,7 @@ p {
 
 
 .alert-info {
-  background-color: rgb(7, 175, 191);
+  background-color: rgba(7, 175, 191, .97);
   border: none;
   color: $white;
   font-style: $headers-font;
@@ -134,7 +134,7 @@ p {
 }
 
 .alert-warning{
-  background-color: rgb(214, 111, 169);
+  background-color: rgba(214, 111, 169, .97);
   color: $white;
   font-style: $headers-font;
   font-weight: 500;
