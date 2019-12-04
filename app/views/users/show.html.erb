@@ -19,23 +19,29 @@
       </div>
       <div class="col-sm user-box">
         <span class="form-actions">
-          <%= link_to 'Edit', edit_user_registration_path, class: 'blue-btn'%>
+          <%= link_to 'Edit', edit_user_registration_path, class: 'blue-btn reduce-font-btn'%>
         </span>
       </div>
     </div>
   </div>
 </div>
-
-<h3 class="form-title margin30b"> MY PREFERENCES </h3>
+<h3 class="form-title margin40tb"> MY PREFERENCES </h3>
 
 <div class="user-preferences">
   <div class="form-inputs basic-form">
     <%= simple_form_for current_user do |f| %>
-      <%= f.association :colours, as: :check_boxes, collection: Colour.all %>
-      <%= f.association :styles, as: :check_boxes, collection: Style.all %>
-      <%= f.association :product_types, as: :check_boxes, collection: ProductType.all %>
-      <%= f.input :cut_id, collection: Cut.all %>
-      <%= f.submit 'Save user', class: 'blue-btn' %>
+    <div class="container">
+      <div class="row questions">
+        <div class="col-sm question"><%= f.association :colours, as: :check_boxes, collection: Colour.all %></div>
+        <div class="col-sm question"><%= f.association :styles, as: :check_boxes, collection: Style.all %></div>
+<!--         <div class="w-100"></div> -->
+        <div class="col-sm question"><%= f.association :product_types, as: :check_boxes, collection: ProductType.all %></div>
+        <div class="col-sm question4"><%= f.input :cut_id, collection: Cut.all %></div>
+      </div>
+      <div class="row preferences-btn">
+        <%= f.submit 'Save preferences', class: 'small-btn blue-back' %>
+      </div>
+    </div>
     <% end %>
   </div>
 </div>
