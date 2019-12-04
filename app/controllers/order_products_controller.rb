@@ -20,11 +20,21 @@ class OrderProductsController < ApplicationController
       @order_product.order.total_value += @order_product.product.price
       @order_product.order.save
     end
+
     authorize @order_product
+
     if @order_product.save
-      redirect_to product_path(@product), alert: "Sucessfully added this item to your cart"
+      respond_to do |format|
+        format.js
+        format.html {
+          redirect_to product_path(@product), alert: "Sucessfully added this item to your cart"
+        }
+      end
     else
-      render 'products/show'
+      respond_to do |format|
+        format.js
+        format.html { render 'products/show' }
+      end
     end
   end
 

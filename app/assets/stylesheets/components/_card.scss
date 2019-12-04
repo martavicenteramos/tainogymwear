@@ -3,29 +3,35 @@
   background: white;
 }
 
-.card-trip .img {
-  height: 500px;
-  width: 100%;
-  background-size: cover;
-  z-index: 1;
+.card-link {
+  z-index: 2;
   position: relative;
+
   &:hover {
     .quick-add {
-      display: flex;
-      background-color: white;
-      z-index: 2;
-      height: 25%;
-      position:absolute;
-      bottom: 0;
-      width:100%;
-      justify-content: space-around;
-      align-items: center;
+      opacity: 0.9;
     }
   }
 }
 
+.card-trip .img {
+  height: 500px;
+  width: 100%;
+  background-size: cover;
+}
+
 .quick-add {
-  display: none;
+  opacity: 0;
+  display: flex;
+  background-color: white;
+  height: 25%;
+  position:absolute;
+  bottom: 0;
+  width:100%;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 3;
+  transition: all .2s ease-out;
 }
 
 .size {
