@@ -11,7 +11,6 @@ class Order < ApplicationRecord
     order_products.each do |product|
       sum += product.product.price
     end
-    sum.to_f
+    sprintf('%.2f', sum).gsub(".",",")
   end
-
 end
