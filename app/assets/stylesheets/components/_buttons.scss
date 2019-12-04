@@ -147,7 +147,7 @@
 }
 
 .small-btn {
-  background-color: $taino-blue;
+  background-color: $taino-mediumgray;
   color: $white;
   font-family: $headers-font;
   font-weight: 500;
@@ -166,5 +166,9 @@
 .small-btn:hover {
   opacity: .3;
   text-decoration: none;
+}
+
+.btn-center {
+  align-items: center;
 }
 
