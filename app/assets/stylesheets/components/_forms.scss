@@ -63,18 +63,19 @@
   color: $taino-darkgray;
   font-style: $headers-font;
   border-radius: 5px;
-  padding: 15px;
+  padding: 0px;
   text-transform: uppercase;
   letter-spacing: 4px;
   line-height: 30px;
-  margin: 5px;
+  margin: 0px;
   font-size: 12px;
 
   h4 {
-    font-size: 13px;
+    font-size: 14px;
     text-align: left;
     line-height: 20px;
     font-weight: bold;
+    margin-bottom: 15px;
   }
 
   .form-group.string {
@@ -82,13 +83,47 @@
   }
 
   label {
-    text-color: $taino-pink;
+    font-size: 13px;
+    font-style: inherit;
+    color: $taino-pink;
+    text-align: center;
+  }
+
+  .form-check-label {
+    color: $taino-darkgray;
+    font-size: 12px;
+  }
+
+  .col-form-label {
+    font-size: 13px;
+    font-style: inherit;
+    color: $taino-pink;
+  }
+
+
+  .form-check {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .form-control {
+    font-size: 13px;
+    font-style: inherit;
+  }
+
+  .legend {
+    margin-top: 10px;
   }
 
   input[type=text] {
     font-size: 13px;
     font-style: inherit;
-    color: $taino-pink
+  }
+
+  input[type=email] {
+    font-size: 13px;
+    font-style: inherit;
   }
 }
 
