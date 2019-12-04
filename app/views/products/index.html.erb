@@ -21,13 +21,12 @@
   <div class="left-side-bar col-lg-2">
     <div class="search-elements prod-index-form">
       <h4>Shop by Category</h4>
-      <br>
       <%= simple_form_for @filter, url: { controller: 'products', action: 'index' }, html: {novalidate: true, class: "no-bs-validation"}, method: :get do |f| %>
         <%= f.input :cut, as: :select, required: false, collection: Cut.all, value_method: :name %>
         <%= f.input :type, as: :select, required: false, collection: ProductType.all,value_method: :name %>
         <%= f.input :style, as: :check_boxes, include_hidden: false, required: false, collection: Style.all, value_method: :name %>
         <%= f.input :colour, as: :check_boxes, include_hidden: false, required: false, collection: Colour.all, value_method: :name %>
-        <%= f.submit :SEARCH, class: "blue-btn size-btn" %>
+        <%= f.submit :SEARCH, class: "small-btn" %>
       <% end %>
     </div>
   </div>
