@@ -23,6 +23,27 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
+const sizes = document.querySelectorAll('.size');
+const loadingSign = '<div class="spinner-border" role="status" style="width:20px; height:20px;"></div>';
+const check = '<i class="fas fa-check"></i>';
+
+Array.from(sizes).forEach(size => {
+  const sizeText = size.innerHTML;
+
+  size.addEventListener('ajax:success', async function(event) {
+    size.innerHTML = check;
+
+    // setTimeout(() => {
+    //   size.innerHTML = sizeText;
+    // }, 2000)
+  });
+
+  size.addEventListener('ajax:beforeSend', async function() {
+    size.innerHTML = loadingSign;
+  });
+});
+
 //rafas
 //application_id: 'IBVWT5Z8Y5',
 //api_key: 'cf50e0757b779100f4ea1e8822f923f5'
