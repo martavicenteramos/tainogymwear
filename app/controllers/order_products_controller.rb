@@ -25,7 +25,7 @@ class OrderProductsController < ApplicationController
 
     if @order_product.save
       respond_to do |format|
-        format.js
+        format.js { sleep 1.5 }
         format.html {
           redirect_to product_path(@product), alert: "Sucessfully added this item to your cart"
         }
