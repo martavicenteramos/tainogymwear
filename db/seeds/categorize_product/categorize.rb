@@ -116,10 +116,72 @@ ProductStyle.create!(
 
 p ProductStyle.where(product: prod)
 
-# "non stop leggings"
+# "non stop leggings - grey"
+p prod = Product.find_by(name: "non stop leggings - grey")
+p prod.colour = neutral
+p prod.product_type = leggings
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+
+ProductStyle.create!(
+  product: prod,
+  style: legs
+  )
+ProductStyle.create!(
+  product: prod,
+  style: waist
+  )
+
+ProductStyle.create!(
+  product: prod,
+  style: glutes
+  )
+
+p ProductStyle.where(product: prod)
 
 # "non stop leggings"
+p prod = Product.find_by(name: "non stop leggings - black")
+p prod.colour = black
+p prod.product_type = leggings
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: legs
+  )
+ProductStyle.create!(
+  product: prod,
+  style: waist
+  )
+
+ProductStyle.create!(
+  product: prod,
+  style: glutes
+  )
+
+p ProductStyle.where(product: prod)
+
+
 # "laser cut sports bra"
+
+
+
 # "laser cut tights"
 # "energy+ seamless sports bra"
 # "fit leggings"
