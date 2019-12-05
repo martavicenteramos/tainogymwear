@@ -30,9 +30,8 @@
     </div>
   </div>
 
-   <% if @products.first.nil? %>
-
-      <h2>Sorry we havent find any product matching your search.</h2>
+  <% if @products.first.nil? %>
+    <h2>Sorry we havent find any product matching your search.</h2>
   <% end %>
     <div class="cards col-lg-10">
       <% @products.each do |prod| %>
