@@ -1,5 +1,5 @@
 meta_product_name: "T A Í N O"
 meta_title: "T A Í N O"
 meta_description: "Sexy and practical womens gym clothes store!"
-# meta_image: "cover.png" # should exist in `app/assets/images/`
-twitter_account: "@product_twitter_account"   # required for Twitter Cards
+meta_image: "ogimage.png"
+twitter_account: "@product_twitter_account"
