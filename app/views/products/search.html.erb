@@ -1,12 +1,11 @@
-<div class="ais-InstantSearch">
-  <!-- <h1>InstantSearch.js e-commerce demo</h1> -->
-  <div class="right-panel">
-   <div class="cards col-lg-10 centered">
-     <!--  <div id="searchbox"> -->
-        <%= text_field_tag :search, nil, id: "algolia-search", placeholder:'Search by typing key features...', autofocus: true%>
-    <!--   </div> -->
+<div class="ais-InstantSearch container-fluid">
+  <div class="row">
+   <div class="centered col-10 centered">
+      <%= text_field_tag :search, nil, id: "algolia-search", placeholder:'Search by typing key features...', autofocus: true %>
     </div>
-    <div id="hits"></div>
-    <div id="pagination"></div>
+  </div>
+
+  <div class="row">
+    <div id="hits" class="cards col-lg-10 centered"></div>
   </div>
 </div>
