@@ -112,21 +112,35 @@ class DoYouEvenWomenScraper
   end
 end
 
-
+puts "cheguei ao 1"
 Wishlist.destroy_all
+puts "cheguei ao 2"
 OrderProduct.destroy_all
+puts "cheguei ao 3"
 Order.destroy_all
+puts "cheguei ao 4"
 ProductStyle.destroy_all
+puts "cheguei ao 5"
 Product.destroy_all
+puts "cheguei ao 6"
 UserProductType.destroy_all
+puts "cheguei ao 7"
 ProductType.destroy_all
+puts "cheguei ao 8"
 UserColour.destroy_all
+puts "cheguei ao 9"
 UserStyle.destroy_all
+puts "cheguei ao 10"
 Colour.destroy_all
+puts "cheguei ao 11"
 Cut.destroy_all
+puts "cheguei ao 12"
 Style.destroy_all
+puts "cheguei ao 13"
 User.destroy_all
+puts "cheguei ao 14"
 Picture.destroy_all
+puts "cheguei ao fim"
 
 
 
