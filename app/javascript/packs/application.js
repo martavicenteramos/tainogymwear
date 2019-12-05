@@ -1,8 +1,10 @@
 import algoliasearch from "algoliasearch";
 import "bootstrap";
 
+
 var client = algoliasearch('IBVWT5Z8Y5', '92014f06c232528778ca6dea55cfb907');
 var index = client.initIndex('Product');
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const searchBar = document.getElementById('algolia-search');
