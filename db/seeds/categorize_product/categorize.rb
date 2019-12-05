@@ -628,7 +628,7 @@ ProductStyle.create!(
 p ProductStyle.where(product: prod)
 
 # laser cut tank - salmon
-p prod = Product.find_by(name: "llaser cut tank - salmon")
+p prod = Product.find_by(name: "laser cut tank - salmon")
 p prod.colour = pastel
 p prod.product_type = t_shirt
 p prod.cut = loose
