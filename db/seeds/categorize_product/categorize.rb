@@ -1470,7 +1470,7 @@ p ProductStyle.where(product: prod)
 # Hyperflex Seamless Crop - Jet Black
 p prod = Product.find_by(name: "Hyperflex Seamless Crop - Jet Black")
 p prod.colour = black
-p prod.product_type = crop_top
+p prod.product_type = sports_bra
 p prod.cut = tight
 p prod.save!
 
@@ -1495,7 +1495,7 @@ p ProductStyle.where(product: prod)
 # Hyperflex Seamless Crop - Teal Green
 p prod = Product.find_by(name: "Hyperflex Seamless Crop - Teal Green")
 p prod.colour = bright
-p prod.product_type = crop_top
+p prod.product_type = sports_bra
 p prod.cut = tight
 p prod.save!
 
@@ -1520,7 +1520,7 @@ p ProductStyle.where(product: prod)
 # Hyperflex Seamless Crop - Lavender Purple
 p prod = Product.find_by(name: "Hyperflex Seamless Crop - Lavender Purple")
 p prod.colour = bright
-p prod.product_type = crop_top
+p prod.product_type = sports_bra
 p prod.cut = tight
 p prod.save!
 
@@ -1545,7 +1545,7 @@ p ProductStyle.where(product: prod)
 # Hyperflex Seamless Crop - Electric Blue
 p prod = Product.find_by(name: "Hyperflex Seamless Crop - Electric Blue")
 p prod.colour = bright
-p prod.product_type = crop_top
+p prod.product_type = sports_bra
 p prod.cut = tight
 p prod.save!
 
@@ -1570,7 +1570,7 @@ p ProductStyle.where(product: prod)
 # Hyperflex Seamless Crop - Ruby Red
 p prod = Product.find_by(name: "Hyperflex Seamless Crop - Ruby Red")
 p prod.colour = bright
-p prod.product_type = crop_top
+p prod.product_type = sports_bra
 p prod.cut = tight
 p prod.save!
 
@@ -1682,7 +1682,7 @@ p ProductStyle.where(product: prod)
 # Trinity Seamless Crop - Musk Pink
 p prod = Product.find_by(name: "Trinity Seamless Crop - Musk Pink")
 p prod.colour = pastel
-p prod.product_type = crop_top
+p prod.product_type = sports_bra
 p prod.cut = tight
 p prod.save!
 
@@ -1707,7 +1707,7 @@ p ProductStyle.where(product: prod)
 # Trinity Seamless Crop - Soft Beige
 p prod = Product.find_by(name: "Trinity Seamless Crop - Soft Beige")
 p prod.colour = pastel
-p prod.product_type = crop_top
+p prod.product_type = sports_bra
 p prod.cut = tight
 p prod.save!
 
@@ -1732,7 +1732,7 @@ p ProductStyle.where(product: prod)
 # Trinity Seamless Crop - Sky Blue
 p prod = Product.find_by(name: "Trinity Seamless Crop - Sky Blue")
 p prod.colour = pastel
-p prod.product_type = crop_top
+p prod.product_type = sports_bra
 p prod.cut = tight
 p prod.save!
 
@@ -1843,8 +1843,8 @@ p ProductStyle.where(product: prod)
 
 # Impact Seamless Crop - Earth Red
 p prod = Product.find_by(name: "Impact Seamless Crop - Earth Red")
-p prod.colour = pastel
-p prod.product_type = crop_top
+p prod.colour = bright
+p prod.product_type = sports_bra
 p prod.cut = tight
 p prod.save!
 
@@ -1868,8 +1868,8 @@ p ProductStyle.where(product: prod)
 
 # Impact Seamless Crop - Plum Purple
 p prod = Product.find_by(name: "Impact Seamless Crop - Plum Purple")
-p prod.colour = pastel
-p prod.product_type = crop_top
+p prod.colour = bright
+p prod.product_type = sports_bra
 p prod.cut = tight
 p prod.save!
 
@@ -1893,8 +1893,8 @@ p ProductStyle.where(product: prod)
 
 # Impact Seamless Crop - Olive Green
 p prod = Product.find_by(name: "Impact Seamless Crop - Olive Green")
-p prod.colour = pastel
-p prod.product_type = crop_top
+p prod.colour = bright
+p prod.product_type = sports_bra
 p prod.cut = tight
 p prod.save!
 
