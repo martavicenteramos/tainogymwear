@@ -1,7 +1,7 @@
 import algoliasearch from "algoliasearch";
 import "bootstrap";
 
-var client = algoliasearch('9S8X4M6OGV', 'c4250c1e9bd4adf63c9b8a8867df959f');
+var client = algoliasearch('IBVWT5Z8Y5', 'cf50e0757b779100f4ea1e8822f923f5');
 var index = client.initIndex('Product');
 
 document.addEventListener("DOMContentLoaded", () => {
