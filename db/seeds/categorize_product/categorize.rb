@@ -970,40 +970,998 @@ p ProductStyle.where(product: prod)
 puts "###########################"
 puts "#####PASSED FIRST TEST#####"
 puts "###########################"
+
+
 # power down shorts
-# power down leggings
-# power down sports bra
-# power down leggings
-# power down sports bra
+p prod = Product.find_by(name: "power down shorts")
+p prod.colour = black
+p prod.product_type = shorts
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: legs
+  )
+ProductStyle.create!(
+  product: prod,
+  style: glutes
+  )
+ProductStyle.create!(
+  product: prod,
+  style: waist
+  )
+
+p ProductStyle.where(product: prod)
+
+# power down leggings - blue
+p prod = Product.find_by(name: "power down leggings - blue")
+p prod.colour = pastel
+p prod.product_type = leggings
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: legs
+  )
+ProductStyle.create!(
+  product: prod,
+  style: glutes
+  )
+ProductStyle.create!(
+  product: prod,
+  style: waist
+  )
+
+p ProductStyle.where(product: prod)
+
+# power down leggings - bordeaux
+p prod = Product.find_by(name: "power down leggings - bordeaux")
+p prod.colour = bright
+p prod.product_type = leggings
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: legs
+  )
+ProductStyle.create!(
+  product: prod,
+  style: glutes
+  )
+ProductStyle.create!(
+  product: prod,
+  style: waist
+  )
+
+p ProductStyle.where(product: prod)
+
+# power down sports bra - blue
+p prod = Product.find_by(name: "power down sports bra - blue")
+p prod.colour = bright
+p prod.product_type = crop_top
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: arms
+  )
+ProductStyle.create!(
+  product: prod,
+  style: shoulders
+  )
+
+p ProductStyle.where(product: prod)
+
+# power down sports bra - bordeaux
+p prod = Product.find_by(name: "power down sports bra - bordeaux")
+p prod.colour = bright
+p prod.product_type = crop_top
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: arms
+  )
+ProductStyle.create!(
+  product: prod,
+  style: shoulders
+  )
+
+p ProductStyle.where(product: prod)
+
 # sculpt long sleeve top
-# sculpt leggings
-# sculpt sports bra
-# sculpt leggings
-# sculpt sports bra
-# sculpt leggings
-# sculpt sports bra
-# sculpt leggings
+p prod = Product.find_by(name: "sculpt long sleeve top")
+p prod.colour = black
+p prod.product_type = hoodie
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: arms
+  )
+
+p ProductStyle.where(product: prod)
+
+# sculpt leggings - red
+p prod = Product.find_by(name: "sculpt leggings - red")
+p prod.colour = bright
+p prod.product_type = leggings
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: legs
+  )
+ProductStyle.create!(
+  product: prod,
+  style: glutes
+  )
+ProductStyle.create!(
+  product: prod,
+  style: waist
+  )
+
+p ProductStyle.where(product: prod)
+
+
+# sculpt leggings - blue
+p prod = Product.find_by(name: "sculpt leggings - blue")
+p prod.colour = bright
+p prod.product_type = leggings
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: legs
+  )
+ProductStyle.create!(
+  product: prod,
+  style: glutes
+  )
+ProductStyle.create!(
+  product: prod,
+  style: waist
+  )
+
+p ProductStyle.where(product: prod)
+
+# sculpt leggings - pink
+p prod = Product.find_by(name: "sculpt leggings - pink")
+p prod.colour = pastel
+p prod.product_type = leggings
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: legs
+  )
+ProductStyle.create!(
+  product: prod,
+  style: glutes
+  )
+ProductStyle.create!(
+  product: prod,
+  style: waist
+  )
+
+p ProductStyle.where(product: prod)
+
+# sculpt leggings - black
+p prod = Product.find_by(name: "sculpt leggings - black")
+p prod.colour = black
+p prod.product_type = leggings
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: legs
+  )
+ProductStyle.create!(
+  product: prod,
+  style: glutes
+  )
+ProductStyle.create!(
+  product: prod,
+  style: waist
+  )
+
+p ProductStyle.where(product: prod)
+
+# sculpt sports bra - red
+p prod = Product.find_by(name: "sculpt sports bra - red")
+p prod.colour = bright
+p prod.product_type = sports_bra
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: shoulders
+  )
+ProductStyle.create!(
+  product: prod,
+  style: arms
+  )
+
+p ProductStyle.where(product: prod)
+
+# sculpt sports bra - blue
+p prod = Product.find_by(name: "sculpt sports bra - blue")
+p prod.colour = bright
+p prod.product_type = sports_bra
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: shoulders
+  )
+ProductStyle.create!(
+  product: prod,
+  style: arms
+  )
+
+p ProductStyle.where(product: prod)
+
+# sculpt sports bra - pink
+p prod = Product.find_by(name: "sculpt sports bra - pink")
+p prod.colour = pastel
+p prod.product_type = sports_bra
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: shoulders
+  )
+ProductStyle.create!(
+  product: prod,
+  style: arms
+  )
+
+p ProductStyle.where(product: prod)
+
 # Hyperflex Seamless Leggings - Jet Black
+p prod = Product.find_by(name: "Hyperflex Seamless Leggings - Jet Black")
+p prod.colour = black
+p prod.product_type = leggings
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: waist
+  )
+ProductStyle.create!(
+  product: prod,
+  style: glutes
+  )
+ProductStyle.create!(
+  product: prod,
+  style: legs
+  )
+
+p ProductStyle.where(product: prod)
+
 # Hyperflex Seamless Leggings - Teal Green
+p prod = Product.find_by(name: "Hyperflex Seamless Leggings - Teal Green")
+p prod.colour = bright
+p prod.product_type = leggings
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: waist
+  )
+ProductStyle.create!(
+  product: prod,
+  style: glutes
+  )
+ProductStyle.create!(
+  product: prod,
+  style: legs
+  )
+
+p ProductStyle.where(product: prod)
+
 # Hyperflex Seamless Leggings - Lavender Purple
+p prod = Product.find_by(name: "Hyperflex Seamless Leggings - Lavender Purple")
+p prod.colour = bright
+p prod.product_type = leggings
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: waist
+  )
+ProductStyle.create!(
+  product: prod,
+  style: glutes
+  )
+ProductStyle.create!(
+  product: prod,
+  style: legs
+  )
+
+p ProductStyle.where(product: prod)
+
 # Hyperflex Seamless Leggings - Electric Blue
+p prod = Product.find_by(name: "Hyperflex Seamless Leggings - Electric Blue")
+p prod.colour = bright
+p prod.product_type = leggings
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: waist
+  )
+ProductStyle.create!(
+  product: prod,
+  style: glutes
+  )
+ProductStyle.create!(
+  product: prod,
+  style: legs
+  )
+
+p ProductStyle.where(product: prod)
+
 # Hyperflex Seamless Leggings - Ruby Red
+p prod = Product.find_by(name: "Hyperflex Seamless Leggings - Ruby Red")
+p prod.colour = bright
+p prod.product_type = leggings
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: waist
+  )
+ProductStyle.create!(
+  product: prod,
+  style: glutes
+  )
+ProductStyle.create!(
+  product: prod,
+  style: legs
+  )
+
+p ProductStyle.where(product: prod)
+
 # Hyperflex Seamless Crop - Jet Black
+p prod = Product.find_by(name: "Hyperflex Seamless Crop - Jet Black")
+p prod.colour = black
+p prod.product_type = crop_top
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: arms
+  )
+ProductStyle.create!(
+  product: prod,
+  style: shoulders
+  )
+
+p ProductStyle.where(product: prod)
+
 # Hyperflex Seamless Crop - Teal Green
+p prod = Product.find_by(name: "Hyperflex Seamless Crop - Teal Green")
+p prod.colour = bright
+p prod.product_type = crop_top
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: arms
+  )
+ProductStyle.create!(
+  product: prod,
+  style: shoulders
+  )
+
+p ProductStyle.where(product: prod)
+
 # Hyperflex Seamless Crop - Lavender Purple
+p prod = Product.find_by(name: "Hyperflex Seamless Crop - Lavender Purple")
+p prod.colour = bright
+p prod.product_type = crop_top
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: arms
+  )
+ProductStyle.create!(
+  product: prod,
+  style: shoulders
+  )
+
+p ProductStyle.where(product: prod)
+
 # Hyperflex Seamless Crop - Electric Blue
+p prod = Product.find_by(name: "Hyperflex Seamless Crop - Electric Blue")
+p prod.colour = bright
+p prod.product_type = crop_top
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: arms
+  )
+ProductStyle.create!(
+  product: prod,
+  style: shoulders
+  )
+
+p ProductStyle.where(product: prod)
+
 # Hyperflex Seamless Crop - Ruby Red
+p prod = Product.find_by(name: "Hyperflex Seamless Crop - Ruby Red")
+p prod.colour = bright
+p prod.product_type = crop_top
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: arms
+  )
+ProductStyle.create!(
+  product: prod,
+  style: shoulders
+  )
+
+p ProductStyle.where(product: prod)
+
 # Trinity Seamless Leggings - Musk Pink
+p prod = Product.find_by(name: "Trinity Seamless Leggings - Musk Pink")
+p prod.colour = pastel
+p prod.product_type = leggings
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: waist
+  )
+ProductStyle.create!(
+  product: prod,
+  style: legs
+  )
+ProductStyle.create!(
+  product: prod,
+  style: glutes
+  )
+
+p ProductStyle.where(product: prod)
+
 # Trinity Seamless Leggings - Soft Beige
+p prod = Product.find_by(name: "Trinity Seamless Leggings - Soft Beige")
+p prod.colour = pastel
+p prod.product_type = leggings
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: waist
+  )
+ProductStyle.create!(
+  product: prod,
+  style: legs
+  )
+ProductStyle.create!(
+  product: prod,
+  style: glutes
+  )
+
+p ProductStyle.where(product: prod)
+
 # Trinity Seamless Leggings - Sky Blue
+p prod = Product.find_by(name: "Trinity Seamless Leggings - Sky Blue")
+p prod.colour = pastel
+p prod.product_type = leggings
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: waist
+  )
+ProductStyle.create!(
+  product: prod,
+  style: legs
+  )
+ProductStyle.create!(
+  product: prod,
+  style: glutes
+  )
+
+p ProductStyle.where(product: prod)
+
 # Trinity Seamless Crop - Musk Pink
+p prod = Product.find_by(name: "Trinity Seamless Crop - Musk Pink")
+p prod.colour = pastel
+p prod.product_type = crop_top
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: arms
+  )
+ProductStyle.create!(
+  product: prod,
+  style: shoulders
+  )
+
+p ProductStyle.where(product: prod)
+
 # Trinity Seamless Crop - Soft Beige
+p prod = Product.find_by(name: "Trinity Seamless Crop - Soft Beige")
+p prod.colour = pastel
+p prod.product_type = crop_top
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: arms
+  )
+ProductStyle.create!(
+  product: prod,
+  style: shoulders
+  )
+
+p ProductStyle.where(product: prod)
+
 # Trinity Seamless Crop - Sky Blue
+p prod = Product.find_by(name: "Trinity Seamless Crop - Sky Blue")
+p prod.colour = pastel
+p prod.product_type = crop_top
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: arms
+  )
+ProductStyle.create!(
+  product: prod,
+  style: shoulders
+  )
+
+p ProductStyle.where(product: prod)
+
 # Impact Seamless Leggings - Earth Red
+p prod = Product.find_by(name: "Impact Seamless Leggings - Earth Red")
+p prod.colour = bright
+p prod.product_type = leggings
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: waist
+  )
+ProductStyle.create!(
+  product: prod,
+  style: legs
+  )
+ProductStyle.create!(
+  product: prod,
+  style: glutes
+  )
+
+p ProductStyle.where(product: prod)
+
 # Impact Seamless Leggings - Plum Purple
+p prod = Product.find_by(name: "Impact Seamless Leggings - Plum Purple")
+p prod.colour = bright
+p prod.product_type = leggings
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: waist
+  )
+ProductStyle.create!(
+  product: prod,
+  style: legs
+  )
+ProductStyle.create!(
+  product: prod,
+  style: glutes
+  )
+
+p ProductStyle.where(product: prod)
+
 # Impact Seamless Leggings - Olive Green
+p prod = Product.find_by(name: "Impact Seamless Leggings - Olive Green")
+p prod.colour = bright
+p prod.product_type = leggings
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: waist
+  )
+ProductStyle.create!(
+  product: prod,
+  style: legs
+  )
+ProductStyle.create!(
+  product: prod,
+  style: glutes
+  )
+
+p ProductStyle.where(product: prod)
+
 # Impact Seamless Crop - Earth Red
+p prod = Product.find_by(name: "Impact Seamless Crop - Earth Red")
+p prod.colour = pastel
+p prod.product_type = crop_top
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: arms
+  )
+ProductStyle.create!(
+  product: prod,
+  style: shoulders
+  )
+
+p ProductStyle.where(product: prod)
+
 # Impact Seamless Crop - Plum Purple
+p prod = Product.find_by(name: "Impact Seamless Crop - Plum Purple")
+p prod.colour = pastel
+p prod.product_type = crop_top
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: arms
+  )
+ProductStyle.create!(
+  product: prod,
+  style: shoulders
+  )
+
+p ProductStyle.where(product: prod)
+
 # Impact Seamless Crop - Olive Green
+p prod = Product.find_by(name: "Impact Seamless Crop - Olive Green")
+p prod.colour = pastel
+p prod.product_type = crop_top
+p prod.cut = tight
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: arms
+  )
+ProductStyle.create!(
+  product: prod,
+  style: shoulders
+  )
+
+p ProductStyle.where(product: prod)
+
 # Athletica Running Shorts - Forest Green
+p prod = Product.find_by(name: "Athletica Running Shorts - Forest Green")
+p prod.colour = bright
+p prod.product_type = shorts
+p prod.cut = loose
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: legs
+  )
+ProductStyle.create!(
+  product: prod,
+  style: glutes
+  )
+
+p ProductStyle.where(product: prod)
+
 # Athletica Running Shorts - Pastel Pink
+p prod = Product.find_by(name: "Athletica Running Shorts - Pastel Pink")
+p prod.colour = bright
+p prod.product_type = shorts
+p prod.cut = loose
+p prod.save!
+
+prod_styles = ProductStyle.where(product: prod)
+if prod_styles.length == 1
+  prod_styles.first.destroy
+else
+  prod_styles.destroy_all
+end
+
+ProductStyle.create!(
+  product: prod,
+  style: legs
+  )
+ProductStyle.create!(
+  product: prod,
+  style: glutes
+  )
+
+p ProductStyle.where(product: prod)
