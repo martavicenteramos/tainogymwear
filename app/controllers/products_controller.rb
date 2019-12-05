@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.all
+    @products = Product.all.order("RANDOM()")
     @order_product = OrderProduct.new
 
     # @recomended shows products based on other user similarities
