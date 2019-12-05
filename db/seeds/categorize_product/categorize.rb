@@ -966,6 +966,10 @@ ProductStyle.create!(
   )
 
 p ProductStyle.where(product: prod)
+
+puts "###########################"
+puts "#####PASSED FIRST TEST#####"
+puts "###########################"
 # power down shorts
 # power down leggings
 # power down sports bra
