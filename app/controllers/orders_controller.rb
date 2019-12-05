@@ -27,6 +27,7 @@ class OrdersController < ApplicationController
   def review_information
     @order = Order.find(params[:order_id].to_i)
     authorize @order
+
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
