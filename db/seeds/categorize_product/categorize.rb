@@ -35,7 +35,7 @@ p prod.save!
 
 prod_styles = ProductStyle.where(product: prod)
 if prod_styles.length == 1
-  prod_styles.destroy
+  prod_styles.first.destroy
 else
   prod_styles.destroy_all
 end
