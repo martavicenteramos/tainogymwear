@@ -344,7 +344,7 @@ end
 
 ProductStyle.create!(
   product: prod,
-  style: glutes
+  style: legs
   )
 ProductStyle.create!(
   product: prod,
