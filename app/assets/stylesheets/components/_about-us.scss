@@ -20,12 +20,12 @@
   background: $white;
   line-height: 30px;
   border-radius: 8px;
-  // box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  // border: 1px solid $taino-lightgray;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  border: 1px solid $taino-lightgray;
 }
 
 .team {
-  background-color: rgba(4, 149, 163, .01);
+  background-color: rgba(200, 200, 200, .08);
   padding: 0px 20px;
 }
 
@@ -34,18 +34,6 @@
   color: $taino-newgray;
   padding: 15px;
 }
-
-.team {
-  h2 {
-    color: $white;
-    font-size: 20px;
-    background-color: $taino-blue;
-    opacity: .6;
-    padding: 5px 30px;
-    margin: +12px;
-  }
-}
-
 
 .team .container {
   display: flex;
@@ -60,4 +48,42 @@
 
 .pinkk {
   color: $taino-pink;
+}
+
+.team-links {
+  display: flex;
+  flex-direction: column;
+  color: $taino-mediumgray;
+  align-items: center;
+
+  i {
+    font-size: 25px;
+    color: rgba(200, 200, 200, .8);
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: $taino-mediumgray;
+    font-style: $headers-font;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 5px;
+  }
+
+}
+
+
+.team-name {
+  margin: 18px 0px;
+  font-family: $headers-font;
+  color: $white;
+  font-size: 18px;
+  background-color: rgba(4, 149, 163, .5);
+  text-transform: uppercase;
+  width: 100%;
+  height: 30px;
+  letter-spacing: 5px;
+  text-align: center;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }

@@ -24,7 +24,7 @@
     </div>
   </div>
   <div class="container">
-    <h1 class="form-title margin35tb">Checkout summary:</h1>
+    <h1 class="form-title margin35tb">Checkout summary</h1>
     <div class="accordion" id="accordionExample">
       <div class="row my-3">
         <div class="d-flex w-100 border-table d-flex align-items-center">
@@ -58,14 +58,14 @@
     </div>
   </div>
   <div class= "purchase-summary">
-    <div class="pad10rl"><h5>Purchase of <strong><%= humanized_money_with_symbol @order.total_value %></strong></h5></div>
+    <div class="pad10rl"><h5>Purchase of <strong><%= @order.total_value %> €</strong></h5></div>
     <div class="pad10rl"><button id="pay" class="blue-btn review-btn btn-center">Pay</button></div>
   </div>
 </div>
 <br>
-<br>
 
-<!--         <div class="col-sm user-box">
+
+<!--         <div class="col-sm user-box"> humanized_money_with_symbol
           <span class="form-actions">
             <#%= link_to 'Edit', edit_user_registration_path, class: 'blue-btn reduce-font-btn'%>
           </span>
