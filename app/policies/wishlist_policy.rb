@@ -6,7 +6,7 @@ class WishlistPolicy < ApplicationPolicy
   end
 
   def create?
-    record.user == user
+    true
   end
 
   def destroy?
@@ -17,3 +17,5 @@ class WishlistPolicy < ApplicationPolicy
     record.user == user
   end
 end
+
+# WTF

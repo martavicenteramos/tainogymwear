@@ -11,8 +11,8 @@ class WishlistsController < ApplicationController
   end
 
   def create
-    @wishlist = Wishlist.create(wishlist_params)
-    @wishlist.product = Product.find(params["wishlist"]["product_id"].to_i)
+    @wishlist = Wishlist.new
+    @wishlist.product = Product.find(params["product_id"].to_i)
     @wishlist.user = current_user
     authorize @wishlist
     if @wishlist.save
@@ -39,6 +39,6 @@ class WishlistsController < ApplicationController
   # end
 
   def wishlist_params
-    params.require(:wishlist).permit(:product_id, :user_id)
+    params.require(:wishlist).permit(:product, :user_id)
   end
 end

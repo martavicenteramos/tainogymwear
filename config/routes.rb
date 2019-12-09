@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       get 'search_results'
     end
     resources :order_products, only: [:create]
+    resources :wishlists, only: [:create]
   end
 
   resources :orders do
@@ -48,7 +49,7 @@ Rails.application.routes.draw do
 
   resources :user_product_types, only: [:new, :create]
 
-  resources :wishlists, only: [:new, :create, :index, :destroy]
+  resources :wishlists, only: [:index, :destroy]
 
   # patch 'order_products/:id/add', to: 'order_products#add', as: 'add'
   # patch 'order_products/:id/remove', to: 'order_products#remove', as: 'remove'
