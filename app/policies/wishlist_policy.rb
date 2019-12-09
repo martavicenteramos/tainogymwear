@@ -17,3 +17,5 @@ class WishlistPolicy < ApplicationPolicy
     record.user == user
   end
 end
+
+# WTF
