@@ -1,19 +1,24 @@
-<!-- Playing with the sidebar -->
-<!-- <div id="mySidebar" class="sidebar mt-5">
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
+<div class="black-friday-banner">
+  <h1><i class="fa fa-truck"></i> &nbsp &nbsp Free shipping for orders over €90* &nbsp &nbsp <i class="fas fa-gifts"></i></h1>
+</div>
+<div id="mySidebar" class="sidebar mt-5">
+  <div class="p-3">
+    <div class="search-elements prod-index-form">
+      <h4>Shop by Category</h4>
+      <%= simple_form_for @filter, url: { controller: 'products', action: 'index' }, html: {novalidate: true, class: "no-bs-validation"}, method: :get do |f| %>
+        <%= f.input :cut, as: :select, required: false, collection: Cut.all, value_method: :name %>
+        <%= f.input :type, as: :select, required: false, collection: ProductType.all,value_method: :name %>
+        <%= f.input :style, as: :check_boxes, include_hidden: false, required: false, collection: Style.all, value_method: :name %>
+        <%= f.input :colour, as: :check_boxes, include_hidden: false, required: false, collection: Colour.all, value_method: :name %>
+        <%= f.submit :SEARCH, class: "small-btn btn-center gray-back" %>
+      <% end %>
+    </div>
+  </div>
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
 </div>
 
 <div id="main">
-  <button class="openbtn" onclick="openNav()">☰ Open Sidebar</button>
-  <h2>Collapsed Sidebar</h2>
-  <p>Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
-</div> -->
-<div class="black-friday-banner">
-  <h1><i class="fa fa-truck"></i> &nbsp &nbsp Free shipping for orders over €90* &nbsp &nbsp <i class="fas fa-gifts"></i></h1>
+  <button class="small-btn gray-back" onclick="openNav()"><i class="fas fa-filter"></i> Filter</button>
 </div>
 <div class="t-container">
   <div class="row">
