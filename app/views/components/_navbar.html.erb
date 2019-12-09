@@ -1,71 +1,64 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-    <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "taino_logo.png" %>
-  <% end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <div class="nav-item-centered">
-          <li class="nav-item">
-            <%= link_to "All Products", products_path, class: "nav-title-center" %>
-          </li>
-        </div>
-        <li class="nav-item">
-          <%= link_to search_products_path do %>
-            <i class="fas fa-search"></i>
-          <% end %>
-        </li>
-        <li class="nav-item">
-          <%= link_to wishlists_index_path do %>
-            <i class="fas fa-heart"></i>
-          <% end %>
-        </li>
-        <li class="nav-item">
-          <%= link_to cart_path, onclick:"openNav()" do %>
-            <i class="fas fa-shopping-cart"></i>
-          <% end %>
-        </li>
-        <li class="nav-item dropdown">
-          <%= image_tag "MARTA.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "PROFILE", profile_path, class: "dropdown-item" %>
-            <%= link_to "MY WISHLIST", wishlists_index_path, class: "dropdown-item" %>
-            <%= link_to "MY ORDERS", orders_path, class: "dropdown-item" %>
-            <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
-      <% else %>
-      <div class="nav-item-centered">
-        <li class="nav-item">
-          <%= link_to "All Products", products_path, class: "nav-title-center" %>
-        </li>
+<div class="main-nav">
+  <div class="navbar">
+      <!-- Image Div, first div -->
+      <div class="image">
+        <%= link_to root_path, class: "navbar-brand" do %>
+          <%= image_tag "taino_logo.png" %>
+        <% end %>
       </div>
-        <li class="nav-item">
-          <%= link_to search_products_path do %>
-            <i class="fas fa-search"></i>
+
+      <!-- center div -->
+      <div class="nav-item-centered">
+        <%= link_to "All Products", products_path, class: "nav-title-center" %>
+      </div>
+
+      <!-- items div -->
+      <div class="items">
+        <ul class="list-items">
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to search_products_path do %>
+                <i class="fas fa-search"></i>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to wishlists_index_path do %>
+                <i class="fas fa-heart"></i>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to cart_path, onclick:"openNav()" do %>
+                <i class="fas fa-shopping-cart"></i>
+              <% end %>
+            </li>
+            <li class="nav-item dropdown">
+              <%= image_tag "MARTA.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <%= link_to "PROFILE", profile_path, class: "dropdown-item" %>
+                <%= link_to "MY WISHLIST", wishlists_index_path, class: "dropdown-item" %>
+                <%= link_to "MY ORDERS", orders_path, class: "dropdown-item" %>
+                <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              </div>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to search_products_path do %>
+                <i class="fas fa-search"></i>
+              <% end %>
+            </li>
+            <div class="login">
+              <li class="nav-item">
+                <%= link_to "Sign up", new_user_registration_path, class: "link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Login", new_user_session_path, class: "link" %>
+              </li>
+            </div>
           <% end %>
-        </li>
-        <li class="nav-item">
-          <%= link_to cart_path do %>
-            <i class="fas fa-shopping-cart"></i>
-          <% end %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-</div>
+        </ul>
+      </div>
+   </div>
+ </div>
 
 <!-- // CHECKOUT ICON
 <i class="fas fa-shopping-cart"></i>

@@ -1,51 +1,50 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background-color: $white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.15);
-  color: $taino-darkgray;
+.main-nav {
   height: 65px; // if changed needs to be changed in card media queries
   top: 0;
   position: sticky;
   z-index:4;
-  padding: 8px 20px;
+  justify-content: space-between;
+  background-color: $white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  color: $taino-darkgray;
+  // position: absolute;
 }
 
-.nav-item i {
-  color: $taino-newgray;
-  opacity: .8;
-  font-size: 18px;
-  vertical-align: center;
-  padding: 12px 15px;
+i {
+  padding: 0px;
 }
 
-.navbar-brand img {
+.navbar {
+  position:absolute;
+  width: 100%
+}
+
+.navbar .navbar-brand {
   width: 130px;
 }
 
-.navbar-collapse {
-  flex-grow: 0;
+.avatar .dropdown-toggle {
+  width: 70px;
+  margin: 0px;
 }
 
-.nav-item i:hover {
-  color: $taino-blue;
-  opacity: .8;
+ul, li {
+  list-style: none;
 }
 
-.nav-link {
-  color: $taino-mediumgray;
-  font-style: $headers-font;
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: 5px;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-// .nav-link a {
-//   padding: 10px 25px;
-// }
-.nav-link:hover {
-  opacity: .35;
+.items {
+  width: 15%;
+  .list-items {
+    width: 100%;
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .nav-item i:hover {
+      color: $taino-blue;
+      opacity: .8;
+    }
+  }
 }
 
 .nav-title-center {
@@ -57,22 +56,65 @@
   text-decoration: none;
   text-transform: uppercase;
   position: relative;
-  right: 47%;
   display: block;
-  padding: 0.5rem 1rem;
+  vertical-align: middle;
+  left: 40%
 }
 
-.nav-title-center:hover {
-  opacity: .3;
-  text-decoration: none;
+.login {
+  width: 90%;
+  display:flex;
+  justify-content:space-around;
+  margin-left: 4px;
+
 }
 
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .nav-title-center {
+    display: none
+  }
 
-.nav-item-centered {
-  display: flex;
-  position: absolute;
-  left: 50%;
+  .items {
+    width: 50%;
+  }
+
+  .login {
+    width: 100%
+  }
 }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .nav-title-center {
+    display: none
+  }
+
+  .items {
+    width: 35%;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .nav-title-center {
+    display: unset;
+  }
+  .items {
+    width: 25%;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .nav-title-center {
+    display: unset;
+  }
+  .items {
+    width: 15%;
+  }
+}
+
 
 .dropdown-item {
   color: $taino-newgray;
@@ -80,7 +122,72 @@
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 5px;
-  padding: 10px 15px;
+  // padding: 10px 15px;
   text-decoration: none;
   text-transform: uppercase;
 }
+
+.link {
+  padding: 0px;
+  margin: 0px;
+}
+.link:hover {
+  opacity: .35;
+}
+
+// .navbar-lewagon {
+//   justify-content: space-between;
+//   background-color: $white;
+//   box-shadow: 0 0 10px rgba(0,0,0,0.15);
+//   color: $taino-darkgray;
+//   height: 65px; // if changed needs to be changed in card media queries
+//   top: 0;
+//   position: sticky;
+//   z-index:4;
+//   // padding: 8px 20px;
+// }
+
+// .nav-item i {
+//   color: $taino-newgray;
+//   opacity: .8;
+//   font-size: 18px;
+//   // vertical-align: center;
+//   // padding: 12px 15px;
+// }
+
+// .navbar-brand img {
+//   width: 130px;
+// }
+
+// .navbar-collapse {
+//   flex-grow: 0;
+//   background-color: white;
+// }
+
+
+
+// .nav-link {
+//   color: $taino-mediumgray;
+//   font-style: $headers-font;
+//   font-weight: 500;
+//   font-size: 14px;
+//   letter-spacing: 5px;
+//   text-decoration: none;
+//   text-transform: uppercase;
+// }
+
+
+// .nav-title-center:hover {
+//   opacity: .3;
+//   text-decoration: none;
+// }
+
+
+// .nav-item-centered {
+//   display: flex;
+//   position: absolute;
+//   left: 50%;
+// }
+
+
+

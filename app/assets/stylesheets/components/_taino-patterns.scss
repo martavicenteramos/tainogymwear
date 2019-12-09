@@ -148,11 +148,9 @@ p {
 
 // >>>>>>>>>>>>>>>>>> LINKS E HOVERS <<<<<<<<<<<<<<<<<<<
 
-// a:hover {
-//   text-decoration: none;
-//   color: $taino-blue;
-//   opacity: .7
-// }
+a:hover {
+  text-decoration: none;
+}
 
 .border-table {
   border-bottom: 0.5px solid $taino-lightgray;
