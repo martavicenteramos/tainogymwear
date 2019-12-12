@@ -1,3 +1,5 @@
+<!-- Web version -->
+
 <div class="main-container-pics mb-5">
   <div class="pic-1 pic"><%= cl_image_tag @product.pictures[1].url %></div>
   <div class="pic-2 pic"><%= cl_image_tag @product.pictures[2].url %></div>
@@ -26,10 +28,64 @@
         <%= f.button :submit, "Add to wishlist", class: "pink-btn wishlist-btn" %>
       <% end %>
       </div>
-
-      <%#= link_to "Add to wishlist", wishlists_path, method: :create, class:"pink-btn" %>
       <br>
     </div>
   </div>
 </div>
+
+<!-- Mobile version -->
+<div class="mobile">
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+          <%= cl_image_tag @product.pictures[1].url, class:"d-block w-100" %>
+      </div>
+      <div class="carousel-item">
+        <%= cl_image_tag @product.pictures[0].url, class:"d-block w-100" %>
+      </div>
+      <div class="carousel-item">
+        <%= cl_image_tag @product.pictures[2].url, class:"d-block w-100" %>
+      </div>
+      <div class="carousel-item">
+        <%= cl_image_tag @product.pictures[3].url, class:"d-block w-100" %>
+      </div>
+      <div class="carousel-item">
+        <%= cl_image_tag @product.pictures[4].url, class:"d-block w-100" %>
+      </div>
+      <div class="carousel-item">
+        <%= cl_image_tag @product.pictures[5].url, class:"d-block w-100" %>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <div class="product-page-details mt-5 ml-3">
+       <%= notice %>
+      <div class="shopping">
+        <h2><%= @product.name %></h2>
+        <h5><%= @product.price %></h5>
+        <p>Select a size: </p>
+        <%= simple_form_for [@product, @order_product] do |f| %>
+        <div class="form-inputs size-form">
+          <%= f.input :size, collection: [ "XS", "S", "M", "L"] %>
+          <%= f.button :submit, "Add to cart", class: "blue-btn checkout-btn" %>
+        <% end %>
+        </div>
+
+        <%= simple_form_for [@product, @wishlist] do |f| %>
+        <div class="form-inputs size-form">
+          <%= f.button :submit, "Add to wishlist", class: "pink-btn wishlist-btn" %>
+        <% end %>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+
 
